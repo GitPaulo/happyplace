@@ -1,0 +1,546 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #c0c0c0;
+  font-family: "Fira Code", "Share Tech Mono", "Courier New", monospace;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  background: #000;
+  border-bottom: 1px solid #1a1a1a;
+  padding: 0 16px;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.navbar-config {
+  margin-left: auto;
+}
+
+.navbar-brand {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* ── Search bar ── */
+.search-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 24px;
+  position: relative;
+}
+
+.search-input-row {
+  display: flex;
+}
+
+.search-input {
+  flex: 1;
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-right: none;
+  color: #c0c0c0;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 6px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-btn {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  color: #555;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.search-btn:hover {
+  color: #fff;
+  border-color: #444;
+}
+
+.search-input::placeholder {
+  color: #444;
+}
+
+.search-input:focus {
+  border-color: #444;
+  color: #fff;
+}
+
+.search-input:focus + .search-btn {
+  border-color: #444;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-top: none;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.search-result {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #111;
+  transition: background 0.1s;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result:hover,
+.search-result.active {
+  background: #151515;
+}
+
+.search-result-name {
+  display: block;
+  font-size: 11px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-detail {
+  display: block;
+  font-size: 9px;
+  color: #555;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.navbar-btn {
+  background: none;
+  border: 1px solid #333;
+  color: #888;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 4px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.15s;
+}
+
+.navbar-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.navbar-btn.open {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ── Map container ── */
+.map-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Leaflet overrides ── */
+.leaflet-container {
+  background: #000 !important;
+  font-family: "Fira Code", monospace !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.85) !important;
+  color: #444 !important;
+  font-size: 9px !important;
+  font-family: "Fira Code", monospace !important;
+}
+
+.leaflet-control-attribution a {
+  color: #555 !important;
+}
+
+.leaflet-control-zoom a {
+  background: #000 !important;
+  color: #666 !important;
+  border: 1px solid #222 !important;
+  font-family: "Fira Code", monospace !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #111 !important;
+  color: #fff !important;
+  border-color: #333 !important;
+}
+
+/* ── Panel backdrop ── */
+.panel-backdrop {
+  position: fixed;
+  top: 42px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+/* ── Score Panel ── */
+.score-panel {
+  position: fixed;
+  top: 42px;
+  right: 0;
+  width: 360px;
+  height: calc(100% - 42px);
+  z-index: 1001;
+  background: #000;
+  border-left: 1px solid #1a1a1a;
+  overflow-y: auto;
+  padding: 20px 16px;
+  transform: translateX(100%);
+  transition: transform 0.25s ease-out;
+}
+
+.score-panel-open {
+  transform: translateX(0);
+}
+
+.panel-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: color 0.15s;
+}
+.panel-close:hover {
+  color: #fff;
+}
+
+/* ── Score Hero ── */
+.panel-score-hero {
+  text-align: center;
+  padding: 16px 0 12px;
+}
+
+.panel-score-ring {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  margin-bottom: 10px;
+}
+
+.panel-score-number {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.panel-score-label {
+  font-size: 11px;
+  color: #555;
+  margin-top: 2px;
+}
+
+.panel-score-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.panel-score-coords {
+  font-size: 10px;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* ── Divider ── */
+.panel-divider {
+  height: 1px;
+  background: #1a1a1a;
+  margin: 14px 0;
+}
+
+/* ── Section titles ── */
+.panel-section-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ── Score Bar ── */
+.score-bar-item {
+  margin-bottom: 12px;
+}
+
+.score-bar-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.score-bar-icon {
+  font-size: 14px;
+  width: 20px;
+  text-align: center;
+}
+
+.score-bar-label {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 500;
+  color: #999;
+}
+
+.score-bar-value {
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 28px;
+  text-align: right;
+}
+
+.score-bar-track {
+  width: 100%;
+  height: 4px;
+  background: #111;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  transition: width 0.4s ease-out;
+}
+
+.score-bar-details {
+  font-size: 10px;
+  color: #444;
+  margin-top: 2px;
+}
+
+.score-bar-no-data {
+  color: #663300;
+}
+
+/* ── Weight Sliders ── */
+.weight-sliders {
+  padding-bottom: 20px;
+}
+
+.weight-sliders-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.weight-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.weight-slider-icon {
+  font-size: 12px;
+  width: 18px;
+  text-align: center;
+}
+
+.weight-slider-label {
+  font-size: 10px;
+  color: #666;
+  width: 72px;
+  flex-shrink: 0;
+}
+
+.weight-slider-input {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #222;
+  outline: none;
+  cursor: pointer;
+}
+
+.weight-slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.weight-slider-input::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.weight-slider-value {
+  font-size: 10px;
+  color: #555;
+  width: 28px;
+  text-align: right;
+}
+
+/* ── Settings dropdown ── */
+.settings-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  z-index: 1100;
+  background: #000;
+  border: 1px solid #1a1a1a;
+  border-top: none;
+  padding: 16px;
+  width: 320px;
+}
+
+/* ── Config sections ── */
+.config-section {
+  margin-bottom: 4px;
+}
+
+.config-section-title {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.config-toggle-row {
+  display: flex;
+  gap: 0;
+}
+
+.config-toggle {
+  flex: 1;
+  background: none;
+  border: 1px solid #222;
+  color: #555;
+  font-family: inherit;
+  font-size: 11px;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.config-toggle:first-child {
+  border-right: none;
+}
+
+.config-toggle.active {
+  background: #111;
+  color: #fff;
+  border-color: #444;
+}
+
+.config-toggle:hover:not(.active) {
+  color: #888;
+}
+
+.config-hint {
+  font-size: 9px;
+  color: #444;
+  margin-top: 6px;
+}
+
+/* ── Amenity map markers ── */
+.amenity-marker {
+  background: none !important;
+  border: none !important;
+}
+
+/* ── Cell loading shimmer ── */
+.cell-loading {
+  fill: url(#shimmer-gradient) !important;
+  fill-opacity: 0.45 !important;
+}
+
+/* ── SVG hatch pattern for unscored cells (injected via Leaflet) ── */
+
+/* ── Scrollbar ── */
+.score-panel::-webkit-scrollbar {
+  width: 4px;
+}
+.score-panel::-webkit-scrollbar-track {
+  background: #000;
+}
+.score-panel::-webkit-scrollbar-thumb {
+  background: #222;
+}
+.score-panel::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.settings-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+.settings-dropdown::-webkit-scrollbar-track {
+  background: #000;
+}
+.settings-dropdown::-webkit-scrollbar-thumb {
+  background: #222;
+}
