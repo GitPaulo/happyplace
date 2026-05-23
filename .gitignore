@@ -1,0 +1,6 @@
+node_modules/
+dist/
+packages/backend/data/
+*.db
+*.db-wal
+*.db-shm
