@@ -25,6 +25,7 @@ export function ScorePanel({ cell, onClose }: ScorePanelProps) {
   };
 
   const amenities = cell.breakdown.filter((b) => b.category === "amenities");
+  const health = cell.breakdown.filter((b) => b.category === "health");
   const safety = cell.breakdown.filter((b) => b.category === "safety");
   const other = cell.breakdown.filter((b) => b.category === "other");
 
@@ -77,11 +78,15 @@ export function ScorePanel({ cell, onClose }: ScorePanelProps) {
 
         {renderGroup("Amenities", amenities)}
 
-        {amenities.length > 0 && safety.length > 0 && <div className="panel-divider" />}
+        {amenities.length > 0 && health.length > 0 && <div className="panel-divider" />}
+
+        {renderGroup("Health", health)}
+
+        {(amenities.length > 0 || health.length > 0) && safety.length > 0 && <div className="panel-divider" />}
 
         {renderGroup("Safety", safety)}
 
-        {(amenities.length > 0 || safety.length > 0) && other.length > 0 && <div className="panel-divider" />}
+        {(amenities.length > 0 || health.length > 0 || safety.length > 0) && other.length > 0 && <div className="panel-divider" />}
 
         {renderGroup("Other", other)}
       </div>

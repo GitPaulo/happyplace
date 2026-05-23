@@ -11,9 +11,8 @@ import {
   type Tile,
   type CellScoreEntry,
 } from "./cache.js";
-import { GrocerySource } from "./sources/grocery.js";
-import { TransportSource } from "./sources/transport.js";
-import { HospitalSource } from "./sources/hospital.js";
+import { GrocerySource, TransportSource, EducationSource } from "./sources/amenities.js";
+import { HospitalSource, PharmacySource, DoctorSource } from "./sources/health.js";
 import { PoliceSource } from "./sources/police.js";
 import { CrimeSource } from "./sources/crime.js";
 import { RealEstateSource } from "./sources/real-estate.js";
@@ -90,7 +89,7 @@ class ScoringEngine {
         };
 
         // Include POI locations for sources with physical markers
-        const poiSources = ["grocery", "transport", "hospital", "police"];
+        const poiSources = ["grocery", "transport", "education", "hospital", "police", "pharmacy", "doctor"];
         if (poiSources.includes(source.id)) {
           event.points = data.map((p) => ({ lat: p.lat, lng: p.lng, type: p.type }));
         }
@@ -177,7 +176,10 @@ export const scoringEngine = new ScoringEngine();
 
 scoringEngine.register(new GrocerySource());
 scoringEngine.register(new TransportSource());
+scoringEngine.register(new EducationSource());
 scoringEngine.register(new HospitalSource());
+scoringEngine.register(new PharmacySource());
+scoringEngine.register(new DoctorSource());
 scoringEngine.register(new PoliceSource());
 scoringEngine.register(new CrimeSource());
 scoringEngine.register(new RealEstateSource());

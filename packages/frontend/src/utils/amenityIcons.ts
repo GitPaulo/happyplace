@@ -6,9 +6,18 @@ const ICON_PATHS: Record<string, string> = {
   transport:
     // Bus
     "M4 2h8a1 1 0 011 1v8a2 2 0 01-2 2H5a2 2 0 01-2-2V3a1 1 0 011-1m0 4h8m-6 5h1m3 0h1M5 4h6",
+  education:
+    // Graduation cap
+    "M8 2L1 6l7 4 7-4-7-4zM3 7v4l5 3 5-3V7",
   hospital:
     // Medical cross
     "M6 3h4v3h3v4h-3v3H6v-3H3V6h3V3z",
+  pharmacy:
+    // Rx mortar & pestle
+    "M5 2h6v2H5V2m-1 3h8v1c0 2-1.5 3-3 3.5V12h3v2H4v-2h3V9.5C5.5 9 4 8 4 6V5z",
+  doctor:
+    // Stethoscope
+    "M5 3v4a3 3 0 006 0V3M4 3h2m4 0h2m-3 8v2a2 2 0 004 0v-1m0 0a1 1 0 100-2 1 1 0 000 2",
   police:
     // Shield
     "M8 1L3 3v4c0 3.5 2.3 6.5 5 8 2.7-1.5 5-4.5 5-8V3L8 1z",

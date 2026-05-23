@@ -82,6 +82,7 @@ async function doOverpassQuery(
             type:
               el.tags?.amenity ??
               el.tags?.shop ??
+              el.tags?.healthcare ??
               el.tags?.public_transport ??
               el.tags?.railway ??
               el.tags?.highway ??

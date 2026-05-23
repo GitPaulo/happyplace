@@ -1,6 +1,6 @@
 import type { BoundingBox, DataPoint, GridCell } from "./types.js";
 
-export type SourceCategory = "amenities" | "safety" | "other";
+export type SourceCategory = "amenities" | "health" | "safety" | "other";
 
 export interface ScoringContext {
   hasCar: boolean;
