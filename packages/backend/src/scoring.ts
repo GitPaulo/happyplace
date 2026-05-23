@@ -1,6 +1,7 @@
 import type { BoundingBox, CellScore, DataPoint, ScoresResponse } from "@happyplace/shared";
 import type { DataSource, SourceCategory, ScoringContext } from "@happyplace/shared";
 import { generateGrid, expandBounds } from "./grid.js";
+import { detectCountries } from "./utils/country.js";
 import {
   getTilesForBounds,
   getCachedTile,
@@ -14,9 +15,9 @@ import {
 import { GrocerySource, TransportSource, EducationSource } from "./sources/amenities.js";
 import { HospitalSource, PharmacySource, DoctorSource } from "./sources/health.js";
 import { PoliceSource } from "./sources/police.js";
-import { CrimeSource } from "./sources/crime.js";
-import { RealEstateSource } from "./sources/real-estate.js";
-import { PopulationDensitySource } from "./sources/population.js";
+import { FrCrimeSource, GbCrimeSource } from "./sources/crime.js";
+import { FrRealEstateSource, GbRealEstateSource } from "./sources/real-estate.js";
+import { FrPopulationDensitySource, GbPopulationDensitySource } from "./sources/population.js";
 
 export interface SourceStreamEvent {
   sourceId: string;
@@ -45,8 +46,13 @@ class ScoringEngine {
     const tiles = getTilesForBounds(expanded);
     const cacheKey = ctx.hasCar ? "car" : "walk";
 
+    const countries = detectCountries(expanded);
+    const activeSources = this.sources.filter(
+      (s) => !s.country || countries.has(s.country)
+    );
+
     await Promise.all(
-      this.sources.map(async (source) => {
+      activeSources.map(async (source) => {
         const weight = weightOverrides[source.id] ?? source.defaultWeight;
         const data = await this.getDataForTiles(source, tiles);
         const scoreBatch: CellScoreEntry[] = [];
@@ -181,6 +187,9 @@ scoringEngine.register(new HospitalSource());
 scoringEngine.register(new PharmacySource());
 scoringEngine.register(new DoctorSource());
 scoringEngine.register(new PoliceSource());
-scoringEngine.register(new CrimeSource());
-scoringEngine.register(new RealEstateSource());
-scoringEngine.register(new PopulationDensitySource());
+scoringEngine.register(new FrCrimeSource());
+scoringEngine.register(new GbCrimeSource());
+scoringEngine.register(new FrRealEstateSource());
+scoringEngine.register(new GbRealEstateSource());
+scoringEngine.register(new FrPopulationDensitySource());
+scoringEngine.register(new GbPopulationDensitySource());

@@ -1,5 +1,5 @@
 import type { BoundingBox } from "@happyplace/shared";
-import { resilientJson } from "../utils/resilient-fetch.js";
+import { resilientJson } from "../../utils/resilient-fetch.js";
 
 export interface CommuneInfo {
   code: string;

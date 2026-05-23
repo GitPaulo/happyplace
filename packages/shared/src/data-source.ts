@@ -12,6 +12,8 @@ export interface DataSource {
   description: string;
   defaultWeight: number;
   category: SourceCategory;
+  /** ISO country code (e.g. "FR", "GB"). Omit for global sources (OSM/Overpass). */
+  country?: string;
 
   fetchData(bounds: BoundingBox): Promise<DataPoint[]>;
 
