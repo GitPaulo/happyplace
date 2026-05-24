@@ -22,7 +22,7 @@ export class CrimeSource implements DataSource {
   id = "crime";
   name = "Crime Rate";
   description = "Crime rates from French Ministry of Interior (SSMSI) open data";
-  defaultWeight = 2.5;
+  defaultWeight = 25;
   category = "safety" as const;
   country = "FR" as const;
 

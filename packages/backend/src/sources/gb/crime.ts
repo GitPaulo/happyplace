@@ -2,71 +2,91 @@ import type { BoundingBox, DataPoint, GridCell } from "@happyplace/shared";
 import type { DataSource, ScoringContext } from "@happyplace/shared";
 import { distanceKm } from "../overpass.js";
 import { resilientJson } from "../../utils/resilient-fetch.js";
+import { getPostcodesForBounds } from "./postcodes.js";
 
 const API_BASE = "https://data.police.uk/api";
+
+interface AreaCrime {
+  lat: number;
+  lng: number;
+  totalCrimes: number;
+  population: number;
+  label: string;
+}
+
+function getLatestMonth(): string {
+  const now = new Date();
+  now.setMonth(now.getMonth() - 3);
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+}
 
 export class CrimeSource implements DataSource {
   id = "crime";
   name = "Crime Rate";
-  description = "Street-level crime data from data.police.uk";
-  defaultWeight = 2.5;
+  description = "Crime rates from data.police.uk (per 1000 inhabitants)";
+  defaultWeight = 25;
   category = "safety" as const;
   country = "GB" as const;
 
   async fetchData(bounds: BoundingBox): Promise<DataPoint[]> {
-    const points = this.samplePoints(bounds);
-    const seen = new Set<string>();
-    const results: DataPoint[] = [];
+    const postcodes = await getPostcodesForBounds(bounds);
+    if (postcodes.length === 0) return [];
 
-    const MAX_CONCURRENCY = 3;
-    for (let i = 0; i < points.length; i += MAX_CONCURRENCY) {
-      const batch = points.slice(i, i + MAX_CONCURRENCY);
-      const fetched = await Promise.all(
-        batch.map((p) => this.fetchCrimesAt(p.lat, p.lng))
-      );
-      for (const crimes of fetched) {
-        for (const c of crimes) {
-          const key = `${c.lat}_${c.lng}_${c.type}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          results.push(c);
-        }
+    // Group by admin district to aggregate crime at local authority level
+    // (mirrors the FR commune-level approach)
+    const districts = new Map<string, { lat: number; lng: number; label: string }>();
+    for (const pc of postcodes) {
+      if (!pc.adminDistrict) continue;
+      if (!districts.has(pc.adminDistrict)) {
+        districts.set(pc.adminDistrict, { lat: pc.lat, lng: pc.lng, label: pc.adminDistrict });
       }
     }
 
-    console.log(`[gb-crime] ${results.length} crime points from ${points.length} sample locations`);
+    const results: DataPoint[] = [];
+    const month = getLatestMonth();
+    const entries = [...districts.values()];
+
+    // Low concurrency to stay under 15 req/s rate limit
+    const MAX_CONCURRENCY = 2;
+    for (let i = 0; i < entries.length; i += MAX_CONCURRENCY) {
+      const batch = entries.slice(i, i + MAX_CONCURRENCY);
+      const fetched = await Promise.all(
+        batch.map((d) => this.fetchCrimesForArea(d.lat, d.lng, month))
+      );
+      for (let j = 0; j < batch.length; j++) {
+        const crimeCount = fetched[j];
+        if (crimeCount === null) continue;
+
+        // Estimate rate per 1000 inhabitants.
+        // Average LSOA population is ~1700. The API returns crimes within ~1 mile
+        // (~2.6 km²), covering roughly 2-4 LSOAs, so ~4000 people.
+        const estPopulation = 4000;
+        const rate = (crimeCount / estPopulation) * 1000;
+
+        console.log(`[gb-crime] ${batch[j].label}: ${crimeCount} crimes, est. rate=${rate.toFixed(1)}/1000`);
+        results.push({
+          lat: batch[j].lat,
+          lng: batch[j].lng,
+          type: "crime_zone",
+          metadata: { rate, label: batch[j].label },
+        });
+      }
+    }
+
+    console.log(`[gb-crime] ${results.length} crime data points from ${districts.size} districts`);
     return results;
   }
 
-  private samplePoints(bounds: BoundingBox): { lat: number; lng: number }[] {
-    const step = 0.02;
-    const points: { lat: number; lng: number }[] = [];
-    for (let lat = bounds.south; lat <= bounds.north; lat += step) {
-      for (let lng = bounds.west; lng <= bounds.east; lng += step) {
-        points.push({ lat, lng });
-      }
-    }
-    return points;
-  }
-
-  private async fetchCrimesAt(lat: number, lng: number): Promise<DataPoint[]> {
-    const url = `${API_BASE}/crimes-street/all-crime?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}`;
+  private async fetchCrimesForArea(lat: number, lng: number, month: string): Promise<number | null> {
+    const url = `${API_BASE}/crimes-street/all-crime?lat=${lat.toFixed(4)}&lng=${lng.toFixed(4)}&date=${month}`;
     const data = await resilientJson<any[]>(url, {
       label: "[gb-crime]",
-      timeoutMs: 15000,
-      maxRetries: 2,
-      baseDelayMs: 2000,
+      timeoutMs: 20000,
+      maxRetries: 3,
+      baseDelayMs: 5000,
     });
-    if (!data || !Array.isArray(data)) return [];
-
-    return data
-      .filter((c: any) => c.location?.latitude && c.location?.longitude)
-      .map((c: any) => ({
-        lat: parseFloat(c.location.latitude),
-        lng: parseFloat(c.location.longitude),
-        type: "crime_point",
-        metadata: { category: c.category },
-      }));
+    if (!data || !Array.isArray(data)) return null;
+    return data.length;
   }
 
   scoreCell(cell: GridCell, data: DataPoint[], _ctx: ScoringContext): { score: number; details: string } {
@@ -74,17 +94,35 @@ export class CrimeSource implements DataSource {
       return { score: 50, details: "No crime data available" };
     }
 
-    let countNearby = 0;
+    // Same scoring logic as FR crime source: distance-weighted rate, exp(-rate/40)
+    let nearest = Infinity;
+    let nearestRate = 0;
+    let nearestLabel = "";
+    let weightedRateSum = 0;
+    let weightSum = 0;
+
     for (const point of data) {
       const d = distanceKm(cell.centerLat, cell.centerLng, point.lat, point.lng);
-      if (d < 1.5) countNearby++;
+      const rate = (point.metadata.rate as number) ?? 0;
+      if (d < nearest) {
+        nearest = d;
+        nearestRate = rate;
+        nearestLabel = (point.metadata.label as string) ?? "";
+      }
+      if (d < 5) {
+        const w = 1 / (d + 0.05);
+        weightedRateSum += rate * w;
+        weightSum += w;
+      }
     }
 
+    const avgRate = weightSum > 0 ? weightedRateSum / weightSum : nearestRate;
+
     const score = Math.max(0, Math.min(100, Math.round(
-      100 * Math.exp(-countNearby / 30)
+      100 * Math.exp(-avgRate / 40)
     )));
 
-    const details = `${countNearby} crime${countNearby !== 1 ? "s" : ""} reported nearby`;
+    const details = `Crime rate ~${avgRate.toFixed(0)}/1000 (${nearestLabel || "area"})`;
     return { score, details };
   }
 }

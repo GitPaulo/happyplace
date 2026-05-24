@@ -30,12 +30,13 @@ async function reverseGeocode(lat: number, lng: number): Promise<PostcodeInfo | 
   }
 
   const r = data.result[0];
+  const codes = r.codes ?? {};
   const info: PostcodeInfo = {
     postcode: r.postcode,
     lat: r.latitude,
     lng: r.longitude,
-    lsoa: r.lsoa ?? "",
-    msoa: r.msoa ?? "",
+    lsoa: codes.lsoa ?? "",
+    msoa: codes.msoa ?? "",
     adminDistrict: r.admin_district ?? "",
   };
   pcCache.set(key, info);

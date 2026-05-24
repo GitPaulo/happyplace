@@ -11,7 +11,7 @@ export class RealEstateSource implements DataSource {
   id = "realestate";
   name = "Real Estate Prices";
   description = "Median apartment/house prices from official DVF open data";
-  defaultWeight = 2;
+  defaultWeight = 5;
   category = "other" as const;
   country = "FR" as const;
 
