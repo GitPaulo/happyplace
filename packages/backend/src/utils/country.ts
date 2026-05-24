@@ -11,6 +11,7 @@ interface CountryBounds {
 const SUPPORTED_COUNTRIES: CountryBounds[] = [
   { code: "FR", south: 41.3, north: 51.1, west: -5.2, east: 9.6 },
   { code: "GB", south: 49.9, north: 60.9, west: -8.2, east: 1.8 },
+  { code: "DE", south: 47.3, north: 55.1, west: 5.9, east: 15.0 },
 ];
 
 function overlaps(a: BoundingBox, b: CountryBounds): boolean {

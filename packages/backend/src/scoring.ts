@@ -15,9 +15,9 @@ import {
 import { GrocerySource, TransportSource, EducationSource } from "./sources/amenities.js";
 import { HospitalSource, PharmacySource, DoctorSource } from "./sources/health.js";
 import { PoliceSource } from "./sources/police.js";
-import { FrCrimeSource, GbCrimeSource } from "./sources/crime.js";
-import { FrRealEstateSource, GbRealEstateSource } from "./sources/real-estate.js";
-import { FrPopulationDensitySource, GbPopulationDensitySource } from "./sources/population.js";
+import { FrCrimeSource, GbCrimeSource, DeCrimeSource } from "./sources/crime.js";
+import { FrRealEstateSource, GbRealEstateSource, DeRealEstateSource } from "./sources/real-estate.js";
+import { FrPopulationDensitySource, GbPopulationDensitySource, DePopulationDensitySource } from "./sources/population.js";
 
 export interface SourceStreamEvent {
   sourceId: string;
@@ -180,3 +180,6 @@ scoringEngine.register(new FrRealEstateSource());
 scoringEngine.register(new GbRealEstateSource());
 scoringEngine.register(new FrPopulationDensitySource());
 scoringEngine.register(new GbPopulationDensitySource());
+scoringEngine.register(new DeCrimeSource());
+scoringEngine.register(new DeRealEstateSource());
+scoringEngine.register(new DePopulationDensitySource());

@@ -1,0 +1,2402 @@
+{
+  "10041": {
+    "name": "Regionalverband Saarbrücken",
+    "lat": 49.2447573,
+    "lng": 6.9716629,
+    "density": 0
+  },
+  "10042": {
+    "name": "Merzig-Wadern",
+    "lat": 49.4926094,
+    "lng": 6.6336942,
+    "density": 0
+  },
+  "10043": {
+    "name": "Neunkirchen",
+    "lat": 49.345482,
+    "lng": 7.178148,
+    "density": 629
+  },
+  "10044": {
+    "name": "Saarlouis",
+    "lat": 49.31506,
+    "lng": 6.75122,
+    "density": 870
+  },
+  "10045": {
+    "name": "Saarpfalz-Kreis",
+    "lat": 49.2613761,
+    "lng": 7.1982316,
+    "density": 0
+  },
+  "10046": {
+    "name": "St. Wendel",
+    "lat": 49.468359,
+    "lng": 7.173032,
+    "density": 224
+  },
+  "11000": {
+    "name": "Berlin",
+    "lat": 52.51767,
+    "lng": 13.405538,
+    "density": 4136
+  },
+  "12051": {
+    "name": "Brandenburg an der Havel",
+    "lat": 52.408651,
+    "lng": 12.563364,
+    "density": 323
+  },
+  "12052": {
+    "name": "Cottbus",
+    "lat": 51.759345,
+    "lng": 14.335117,
+    "density": 574
+  },
+  "12053": {
+    "name": "Frankfurt (Oder)",
+    "lat": 52.344651,
+    "lng": 14.551151,
+    "density": 386
+  },
+  "12054": {
+    "name": "Potsdam",
+    "lat": 52.400355,
+    "lng": 13.05358,
+    "density": 981
+  },
+  "12060": {
+    "name": "Barnim",
+    "lat": 52.8019322,
+    "lng": 13.6771933,
+    "density": 0
+  },
+  "12061": {
+    "name": "Dahme-Spreewald",
+    "lat": 52.0739107,
+    "lng": 13.8668655,
+    "density": 0
+  },
+  "12062": {
+    "name": "Elbe-Elster",
+    "lat": 51.6271759,
+    "lng": 13.4805453,
+    "density": 0
+  },
+  "12063": {
+    "name": "Havelland",
+    "lat": 52.6244438,
+    "lng": 12.6847264,
+    "density": 0
+  },
+  "12064": {
+    "name": "Märkisch-Oderland",
+    "lat": 52.6387335,
+    "lng": 14.178299,
+    "density": 0
+  },
+  "12065": {
+    "name": "Oberhavel",
+    "lat": 52.918881,
+    "lng": 13.2279803,
+    "density": 0
+  },
+  "12066": {
+    "name": "Oberspreewald-Lausitz",
+    "lat": 51.6309052,
+    "lng": 14.0339298,
+    "density": 0
+  },
+  "12067": {
+    "name": "Oder-Spree",
+    "lat": 52.2504354,
+    "lng": 14.2685781,
+    "density": 0
+  },
+  "12068": {
+    "name": "Ostprignitz-Ruppin",
+    "lat": 53.0010645,
+    "lng": 12.703367,
+    "density": 0
+  },
+  "12069": {
+    "name": "Potsdam-Mittelmark",
+    "lat": 52.2682985,
+    "lng": 12.7013596,
+    "density": 0
+  },
+  "12070": {
+    "name": "Prignitz",
+    "lat": 53.118372,
+    "lng": 12.055363,
+    "density": 15
+  },
+  "12071": {
+    "name": "Spree-Neiße",
+    "lat": 51.7813957,
+    "lng": 14.1970946,
+    "density": 0
+  },
+  "12072": {
+    "name": "Teltow-Fläming",
+    "lat": 52.1010266,
+    "lng": 13.2652656,
+    "density": 0
+  },
+  "12073": {
+    "name": "Uckermark",
+    "lat": 53.331298,
+    "lng": 13.707767,
+    "density": 16
+  },
+  "13003": {
+    "name": "Rostock",
+    "lat": 54.088548,
+    "lng": 12.135993,
+    "density": 1132
+  },
+  "13004": {
+    "name": "Schwerin",
+    "lat": 53.628545,
+    "lng": 11.414434,
+    "density": 753
+  },
+  "13071": {
+    "name": "Mecklenburgische Seenplatte",
+    "lat": 53.5838993,
+    "lng": 13.0638679,
+    "density": 0
+  },
+  "13072": {
+    "name": "Landkreis Rostock",
+    "lat": 53.9210675,
+    "lng": 12.2937049,
+    "density": 0
+  },
+  "13073": {
+    "name": "Vorpommern-Rügen",
+    "lat": 54.2305684,
+    "lng": 12.8070296,
+    "density": 0
+  },
+  "13074": {
+    "name": "Nordwestmecklenburg",
+    "lat": 53.8002812,
+    "lng": 11.2879208,
+    "density": 0
+  },
+  "13075": {
+    "name": "Vorpommern-Greifswald",
+    "lat": 53.7245862,
+    "lng": 13.8981847,
+    "density": 0
+  },
+  "13076": {
+    "name": "Ludwigslust-Parchim",
+    "lat": 53.454421,
+    "lng": 11.4828447,
+    "density": 0
+  },
+  "14511": {
+    "name": "Chemnitz",
+    "lat": 50.833593,
+    "lng": 12.921602,
+    "density": 1111
+  },
+  "14521": {
+    "name": "Erzgebirgskreis",
+    "lat": 50.6018498,
+    "lng": 12.9567835,
+    "density": 0
+  },
+  "14522": {
+    "name": "Mittelsachsen",
+    "lat": 50.9348991,
+    "lng": 13.0428111,
+    "density": 0
+  },
+  "14523": {
+    "name": "Vogtlandkreis",
+    "lat": 50.4240551,
+    "lng": 12.2524349,
+    "density": 0
+  },
+  "14524": {
+    "name": "Zwickau",
+    "lat": 50.718556,
+    "lng": 12.495641,
+    "density": 852
+  },
+  "14612": {
+    "name": "Dresden",
+    "lat": 51.051697,
+    "lng": 13.736883,
+    "density": 1720
+  },
+  "14625": {
+    "name": "Bautzen",
+    "lat": 51.180868,
+    "lng": 14.427688,
+    "density": 564
+  },
+  "14626": {
+    "name": "Görlitz",
+    "lat": 51.155287,
+    "lng": 14.988035,
+    "density": 817
+  },
+  "14627": {
+    "name": "Meißen",
+    "lat": 51.159993,
+    "lng": 13.468635,
+    "density": 930
+  },
+  "14628": {
+    "name": "Sächsische Schweiz-Osterzgebirge",
+    "lat": 50.9033373,
+    "lng": 13.9237684,
+    "density": 0
+  },
+  "14713": {
+    "name": "Leipzig",
+    "lat": 51.338288,
+    "lng": 12.377931,
+    "density": 2055
+  },
+  "14729": {
+    "name": "Leipzig",
+    "lat": 51.3406321,
+    "lng": 12.3747329,
+    "density": 0
+  },
+  "14730": {
+    "name": "Nordsachsen",
+    "lat": 51.4420848,
+    "lng": 13.0383672,
+    "density": 0
+  },
+  "15001": {
+    "name": "Dessau-Roßlau",
+    "lat": 51.834703,
+    "lng": 12.245715,
+    "density": 307
+  },
+  "15002": {
+    "name": "Halle (Saale)",
+    "lat": 51.482478,
+    "lng": 11.970666,
+    "density": 1673
+  },
+  "15003": {
+    "name": "Magdeburg",
+    "lat": 52.126248,
+    "lng": 11.632726,
+    "density": 1211
+  },
+  "15081": {
+    "name": "Altmarkkreis Salzwedel",
+    "lat": 52.6912307,
+    "lng": 11.2303736,
+    "density": 0
+  },
+  "15082": {
+    "name": "Anhalt-Bitterfeld",
+    "lat": 51.8167973,
+    "lng": 12.010507,
+    "density": 0
+  },
+  "15083": {
+    "name": "Börde",
+    "lat": 52.166272,
+    "lng": 11.483142,
+    "density": 109
+  },
+  "15084": {
+    "name": "Burgenlandkreis",
+    "lat": 51.1290648,
+    "lng": 11.8515581,
+    "density": 0
+  },
+  "15085": {
+    "name": "Harz",
+    "lat": 51.791278,
+    "lng": 10.952601,
+    "density": 127
+  },
+  "15086": {
+    "name": "Jerichower Land",
+    "lat": 52.288252,
+    "lng": 12.0099979,
+    "density": 0
+  },
+  "15087": {
+    "name": "Mansfeld-Südharz",
+    "lat": 51.5345635,
+    "lng": 11.3350904,
+    "density": 0
+  },
+  "15088": {
+    "name": "Saalekreis",
+    "lat": 51.4546904,
+    "lng": 11.8505089,
+    "density": 0
+  },
+  "15089": {
+    "name": "Salzlandkreis",
+    "lat": 51.8509799,
+    "lng": 11.6004622,
+    "density": 0
+  },
+  "15090": {
+    "name": "Stendal",
+    "lat": 52.605755,
+    "lng": 11.858833,
+    "density": 141
+  },
+  "15091": {
+    "name": "Wittenberg",
+    "lat": 51.867003,
+    "lng": 12.645554,
+    "density": 187
+  },
+  "16051": {
+    "name": "Erfurt",
+    "lat": 50.977122,
+    "lng": 11.027236,
+    "density": 811
+  },
+  "16052": {
+    "name": "Gera",
+    "lat": 50.876147,
+    "lng": 12.080429,
+    "density": 628
+  },
+  "16053": {
+    "name": "Jena",
+    "lat": 50.93006,
+    "lng": 11.591842,
+    "density": 956
+  },
+  "16054": {
+    "name": "Suhl",
+    "lat": 50.609218,
+    "lng": 10.691867,
+    "density": 245
+  },
+  "16055": {
+    "name": "Weimar",
+    "lat": 50.980761,
+    "lng": 11.329741,
+    "density": 781
+  },
+  "16061": {
+    "name": "Eichsfeld",
+    "lat": 51.3913711,
+    "lng": 10.2318104,
+    "density": 0
+  },
+  "16062": {
+    "name": "Nordhausen",
+    "lat": 51.500441,
+    "lng": 10.791619,
+    "density": 377
+  },
+  "16063": {
+    "name": "Wartburgkreis",
+    "lat": 50.8904031,
+    "lng": 10.2412685,
+    "density": 0
+  },
+  "16064": {
+    "name": "Unstrut-Hainich-Kreis",
+    "lat": 51.1877205,
+    "lng": 10.5744796,
+    "density": 0
+  },
+  "16065": {
+    "name": "Kyffhäuserkreis",
+    "lat": 51.3146113,
+    "lng": 10.8382263,
+    "density": 0
+  },
+  "16066": {
+    "name": "Schmalkalden-Meiningen",
+    "lat": 50.6217561,
+    "lng": 10.3417729,
+    "density": 0
+  },
+  "16067": {
+    "name": "Gotha",
+    "lat": 50.948759,
+    "lng": 10.70337,
+    "density": 667
+  },
+  "16068": {
+    "name": "Sömmerda",
+    "lat": 51.159368,
+    "lng": 11.118975,
+    "density": 211
+  },
+  "16069": {
+    "name": "Hildburghausen",
+    "lat": 50.425612,
+    "lng": 10.729007,
+    "density": 160
+  },
+  "16070": {
+    "name": "Ilm-Kreis",
+    "lat": 50.7291643,
+    "lng": 10.9575149,
+    "density": 0
+  },
+  "16071": {
+    "name": "Weimarer Land",
+    "lat": 50.9567989,
+    "lng": 11.2053748,
+    "density": 0
+  },
+  "16072": {
+    "name": "Sonneberg",
+    "lat": 50.357569,
+    "lng": 11.175725,
+    "density": 270
+  },
+  "16073": {
+    "name": "Saalfeld-Rudolstadt",
+    "lat": 50.6280079,
+    "lng": 11.2869459,
+    "density": 0
+  },
+  "16074": {
+    "name": "Saale-Holzland-Kreis",
+    "lat": 50.9041255,
+    "lng": 11.7321914,
+    "density": 0
+  },
+  "16075": {
+    "name": "Saale-Orla-Kreis",
+    "lat": 50.623351,
+    "lng": 11.7208511,
+    "density": 0
+  },
+  "16076": {
+    "name": "Greiz",
+    "lat": 50.654739,
+    "lng": 12.201545,
+    "density": 233
+  },
+  "16077": {
+    "name": "Altenburger Land",
+    "lat": 50.955291,
+    "lng": 12.3808622,
+    "density": 0
+  },
+  "01001": {
+    "name": "Flensburg",
+    "lat": 54.78252,
+    "lng": 9.43751,
+    "density": 1698
+  },
+  "01002": {
+    "name": "Kiel",
+    "lat": 54.321775,
+    "lng": 10.13727,
+    "density": 2130
+  },
+  "01003": {
+    "name": "Lübeck",
+    "lat": 53.866269,
+    "lng": 10.683932,
+    "density": 1013
+  },
+  "01004": {
+    "name": "Neumünster",
+    "lat": 54.069895,
+    "lng": 9.988422,
+    "density": 1114
+  },
+  "01051": {
+    "name": "Dithmarschen",
+    "lat": 53.99748,
+    "lng": 9.26246,
+    "density": 362
+  },
+  "01056": {
+    "name": "Pinneberg",
+    "lat": 53.661209,
+    "lng": 9.796428,
+    "density": 2083
+  },
+  "01057": {
+    "name": "Plön",
+    "lat": 54.158288,
+    "lng": 10.416369,
+    "density": 246
+  },
+  "01060": {
+    "name": "Segeberg",
+    "lat": 53.937059,
+    "lng": 10.304193,
+    "density": 975
+  },
+  "03101": {
+    "name": "Braunschweig",
+    "lat": 52.26249,
+    "lng": 10.520525,
+    "density": 1313
+  },
+  "03102": {
+    "name": "Salzgitter",
+    "lat": 52.153574,
+    "lng": 10.329208,
+    "density": 468
+  },
+  "02000": {
+    "name": "Hamburg",
+    "lat": 53.550678,
+    "lng": 9.99697,
+    "density": 2467
+  },
+  "03103": {
+    "name": "Wolfsburg",
+    "lat": 52.421938,
+    "lng": 10.784975,
+    "density": 633
+  },
+  "03155": {
+    "name": "Northeim",
+    "lat": 51.705681,
+    "lng": 10.000406,
+    "density": 187
+  },
+  "03154": {
+    "name": "Helmstedt",
+    "lat": 52.227571,
+    "lng": 11.010462,
+    "density": 376
+  },
+  "03153": {
+    "name": "Goslar",
+    "lat": 51.906508,
+    "lng": 10.429312,
+    "density": 289
+  },
+  "03151": {
+    "name": "Gifhorn",
+    "lat": 52.484369,
+    "lng": 10.54687,
+    "density": 405
+  },
+  "03157": {
+    "name": "Peine",
+    "lat": 52.321764,
+    "lng": 10.227076,
+    "density": 425
+  },
+  "03158": {
+    "name": "Wolfenbüttel",
+    "lat": 52.163491,
+    "lng": 10.536202,
+    "density": 668
+  },
+  "03159": {
+    "name": "Göttingen",
+    "lat": 51.533337,
+    "lng": 9.935418,
+    "density": 1087
+  },
+  "03251": {
+    "name": "Diepholz",
+    "lat": 52.606393,
+    "lng": 8.370605,
+    "density": 169
+  },
+  "03254": {
+    "name": "Hildesheim",
+    "lat": 52.150623,
+    "lng": 9.948181,
+    "density": 1067
+  },
+  "03256": {
+    "name": "Nienburg (Weser)",
+    "lat": 52.640859,
+    "lng": 9.211648,
+    "density": 505
+  },
+  "03255": {
+    "name": "Holzminden",
+    "lat": 51.828764,
+    "lng": 9.447159,
+    "density": 214
+  },
+  "03351": {
+    "name": "Celle",
+    "lat": 52.626307,
+    "lng": 10.08067,
+    "density": 380
+  },
+  "03352": {
+    "name": "Cuxhaven",
+    "lat": 53.864463,
+    "lng": 8.69747,
+    "density": 307
+  },
+  "03355": {
+    "name": "Lüneburg",
+    "lat": 53.249157,
+    "lng": 10.408793,
+    "density": 1061
+  },
+  "03357": {
+    "name": "Rotenburg (Wümme)",
+    "lat": 53.110417,
+    "lng": 9.403666,
+    "density": 233
+  },
+  "03356": {
+    "name": "Osterholz",
+    "lat": 53.230402,
+    "lng": 8.782826,
+    "density": 202
+  },
+  "03359": {
+    "name": "Stade",
+    "lat": 53.601302,
+    "lng": 9.475977,
+    "density": 442
+  },
+  "03360": {
+    "name": "Uelzen",
+    "lat": 52.96495,
+    "lng": 10.560601,
+    "density": 240
+  },
+  "03361": {
+    "name": "Verden",
+    "lat": 52.847043,
+    "lng": 9.227519,
+    "density": 105
+  },
+  "03404": {
+    "name": "Osnabrück",
+    "lat": 52.27692,
+    "lng": 8.04205,
+    "density": 1386
+  },
+  "03401": {
+    "name": "Delmenhorst",
+    "lat": 53.049883,
+    "lng": 8.630108,
+    "density": 1304
+  },
+  "03402": {
+    "name": "Emden",
+    "lat": 53.370558,
+    "lng": 7.205946,
+    "density": 438
+  },
+  "03405": {
+    "name": "Wilhelmshaven",
+    "lat": 53.520302,
+    "lng": 8.111156,
+    "density": 707
+  },
+  "03453": {
+    "name": "Cloppenburg",
+    "lat": 52.848368,
+    "lng": 8.042518,
+    "density": 516
+  },
+  "03452": {
+    "name": "Aurich",
+    "lat": 53.469895,
+    "lng": 7.482377,
+    "density": 216
+  },
+  "03457": {
+    "name": "Leer",
+    "lat": 53.22947,
+    "lng": 7.451416,
+    "density": 485
+  },
+  "04011": {
+    "name": "Bremen",
+    "lat": 53.075606,
+    "lng": 8.809338,
+    "density": 1797
+  },
+  "03460": {
+    "name": "Vechta",
+    "lat": 52.726848,
+    "lng": 8.284656,
+    "density": 384
+  },
+  "03462": {
+    "name": "Wittmund",
+    "lat": 53.575515,
+    "lng": 7.780018,
+    "density": 95
+  },
+  "04012": {
+    "name": "Bremerhaven",
+    "lat": 53.543032,
+    "lng": 8.578068,
+    "density": 1265
+  },
+  "05111": {
+    "name": "Düsseldorf",
+    "lat": 51.22422,
+    "lng": 6.780068,
+    "density": 2846
+  },
+  "05114": {
+    "name": "Krefeld",
+    "lat": 51.332637,
+    "lng": 6.56089,
+    "density": 1680
+  },
+  "05112": {
+    "name": "Duisburg",
+    "lat": 51.433259,
+    "lng": 6.765477,
+    "density": 2157
+  },
+  "05116": {
+    "name": "Mönchengladbach",
+    "lat": 51.194473,
+    "lng": 6.43161,
+    "density": 1568
+  },
+  "05113": {
+    "name": "Essen",
+    "lat": 51.455843,
+    "lng": 7.012583,
+    "density": 2732
+  },
+  "05117": {
+    "name": "Mülheim an der Ruhr",
+    "lat": 51.428107,
+    "lng": 6.88505,
+    "density": 1896
+  },
+  "05122": {
+    "name": "Solingen",
+    "lat": 51.171718,
+    "lng": 7.085665,
+    "density": 1850
+  },
+  "05119": {
+    "name": "Oberhausen",
+    "lat": 51.470317,
+    "lng": 6.852291,
+    "density": 2771
+  },
+  "05124": {
+    "name": "Wuppertal",
+    "lat": 51.271288,
+    "lng": 7.195874,
+    "density": 2127
+  },
+  "05120": {
+    "name": "Remscheid",
+    "lat": 51.179878,
+    "lng": 7.194356,
+    "density": 1527
+  },
+  "05154": {
+    "name": "Kleve",
+    "lat": 51.787781,
+    "lng": 6.138858,
+    "density": 542
+  },
+  "05158": {
+    "name": "Mettmann",
+    "lat": 51.251915,
+    "lng": 6.978743,
+    "density": 929
+  },
+  "05166": {
+    "name": "Viersen",
+    "lat": 51.25896,
+    "lng": 6.388284,
+    "density": 860
+  },
+  "05170": {
+    "name": "Wesel",
+    "lat": 51.65733,
+    "lng": 6.617306,
+    "density": 496
+  },
+  "05315": {
+    "name": "Köln",
+    "lat": 50.938107,
+    "lng": 6.957068,
+    "density": 2530
+  },
+  "05314": {
+    "name": "Bonn",
+    "lat": 50.734245,
+    "lng": 7.099187,
+    "density": 2292
+  },
+  "05358": {
+    "name": "Düren",
+    "lat": 50.801678,
+    "lng": 6.482964,
+    "density": 1112
+  },
+  "05334": {
+    "name": "Aachen",
+    "lat": 50.773516,
+    "lng": 6.0848,
+    "density": 1633
+  },
+  "05316": {
+    "name": "Leverkusen",
+    "lat": 51.03245,
+    "lng": 6.979767,
+    "density": 2137
+  },
+  "05366": {
+    "name": "Euskirchen",
+    "lat": 50.660933,
+    "lng": 6.786098,
+    "density": 430
+  },
+  "05370": {
+    "name": "Heinsberg",
+    "lat": 51.061906,
+    "lng": 6.094538,
+    "density": 468
+  },
+  "05512": {
+    "name": "Bottrop",
+    "lat": 51.521059,
+    "lng": 6.927126,
+    "density": 1178
+  },
+  "05513": {
+    "name": "Gelsenkirchen",
+    "lat": 51.510892,
+    "lng": 7.096064,
+    "density": 2553
+  },
+  "05515": {
+    "name": "Münster",
+    "lat": 51.961908,
+    "lng": 7.626804,
+    "density": 1016
+  },
+  "05554": {
+    "name": "Borken",
+    "lat": 51.843222,
+    "lng": 6.858415,
+    "density": 281
+  },
+  "05558": {
+    "name": "Coesfeld",
+    "lat": 51.944948,
+    "lng": 7.166744,
+    "density": 270
+  },
+  "05566": {
+    "name": "Steinfurt",
+    "lat": 52.125169,
+    "lng": 7.395195,
+    "density": 312
+  },
+  "05562": {
+    "name": "Recklinghausen",
+    "lat": 51.614576,
+    "lng": 7.197544,
+    "density": 1734
+  },
+  "05570": {
+    "name": "Warendorf",
+    "lat": 51.950713,
+    "lng": 7.988499,
+    "density": 213
+  },
+  "05711": {
+    "name": "Bielefeld",
+    "lat": 52.021995,
+    "lng": 8.534049,
+    "density": 1281
+  },
+  "05762": {
+    "name": "Höxter",
+    "lat": 51.775666,
+    "lng": 9.381623,
+    "density": 178
+  },
+  "05758": {
+    "name": "Herford",
+    "lat": 52.115598,
+    "lng": 8.673516,
+    "density": 853
+  },
+  "05754": {
+    "name": "Gütersloh",
+    "lat": 51.907302,
+    "lng": 8.375587,
+    "density": 897
+  },
+  "05911": {
+    "name": "Bochum",
+    "lat": 51.482699,
+    "lng": 7.217177,
+    "density": 2462
+  },
+  "05774": {
+    "name": "Paderborn",
+    "lat": 51.719601,
+    "lng": 8.757301,
+    "density": 871
+  },
+  "05913": {
+    "name": "Dortmund",
+    "lat": 51.514171,
+    "lng": 7.464165,
+    "density": 2150
+  },
+  "05915": {
+    "name": "Hamm",
+    "lat": 51.678312,
+    "lng": 7.816947,
+    "density": 795
+  },
+  "05914": {
+    "name": "Hagen",
+    "lat": 51.360171,
+    "lng": 7.467406,
+    "density": 1187
+  },
+  "05916": {
+    "name": "Herne",
+    "lat": 51.540365,
+    "lng": 7.222793,
+    "density": 3031
+  },
+  "05966": {
+    "name": "Olpe",
+    "lat": 51.02756,
+    "lng": 7.843584,
+    "density": 288
+  },
+  "05974": {
+    "name": "Soest",
+    "lat": 51.572543,
+    "lng": 8.106308,
+    "density": 557
+  },
+  "05978": {
+    "name": "Unna",
+    "lat": 51.534878,
+    "lng": 7.689932,
+    "density": 659
+  },
+  "06412": {
+    "name": "Frankfurt am Main",
+    "lat": 50.11088,
+    "lng": 8.682433,
+    "density": 3045
+  },
+  "06411": {
+    "name": "Darmstadt",
+    "lat": 49.872238,
+    "lng": 8.653838,
+    "density": 1368
+  },
+  "06413": {
+    "name": "Offenbach am Main",
+    "lat": 50.105567,
+    "lng": 8.764442,
+    "density": 2958
+  },
+  "06414": {
+    "name": "Wiesbaden",
+    "lat": 50.081698,
+    "lng": 8.239138,
+    "density": 1417
+  },
+  "06433": {
+    "name": "Groß-Gerau",
+    "lat": 49.92162,
+    "lng": 8.482423,
+    "density": 466
+  },
+  "06431": {
+    "name": "Bergstraße",
+    "lat": 49.641185,
+    "lng": 8.644017,
+    "density": 535
+  },
+  "06531": {
+    "name": "Gießen",
+    "lat": 50.586195,
+    "lng": 8.674877,
+    "density": 1228
+  },
+  "06631": {
+    "name": "Fulda",
+    "lat": 50.55323,
+    "lng": 9.675061,
+    "density": 629
+  },
+  "06611": {
+    "name": "Kassel",
+    "lat": 51.314684,
+    "lng": 9.495199,
+    "density": 1847
+  },
+  "07111": {
+    "name": "Koblenz",
+    "lat": 50.359516,
+    "lng": 7.597956,
+    "density": 1077
+  },
+  "07131": {
+    "name": "Ahrweiler",
+    "lat": 50.545218,
+    "lng": 7.120457,
+    "density": 442
+  },
+  "07132": {
+    "name": "Altenkirchen (Westerwald)",
+    "lat": 50.687851,
+    "lng": 7.645362,
+    "density": 615
+  },
+  "07133": {
+    "name": "Bad Kreuznach",
+    "lat": 49.844515,
+    "lng": 7.861839,
+    "density": 975
+  },
+  "07134": {
+    "name": "Birkenfeld",
+    "lat": 49.650147,
+    "lng": 7.168182,
+    "density": 518
+  },
+  "07138": {
+    "name": "Neuwied",
+    "lat": 50.429018,
+    "lng": 7.459692,
+    "density": 776
+  },
+  "07211": {
+    "name": "Trier",
+    "lat": 49.757603,
+    "lng": 6.638021,
+    "density": 891
+  },
+  "07311": {
+    "name": "Frankenthal (Pfalz)",
+    "lat": 49.535556,
+    "lng": 8.354282,
+    "density": 1097
+  },
+  "07314": {
+    "name": "Ludwigshafen am Rhein",
+    "lat": 49.483235,
+    "lng": 8.447899,
+    "density": 2289
+  },
+  "07315": {
+    "name": "Mainz",
+    "lat": 50.001959,
+    "lng": 8.271855,
+    "density": 2299
+  },
+  "07312": {
+    "name": "Kaiserslautern",
+    "lat": 49.445456,
+    "lng": 7.768864,
+    "density": 719
+  },
+  "07313": {
+    "name": "Landau in der Pfalz",
+    "lat": 49.196595,
+    "lng": 8.112414,
+    "density": 581
+  },
+  "07316": {
+    "name": "Neustadt an der Weinstraße",
+    "lat": 49.351983,
+    "lng": 8.140755,
+    "density": 452
+  },
+  "07319": {
+    "name": "Worms",
+    "lat": 49.629828,
+    "lng": 8.361704,
+    "density": 798
+  },
+  "07317": {
+    "name": "Pirmasens",
+    "lat": 49.19945,
+    "lng": 7.606009,
+    "density": 648
+  },
+  "07320": {
+    "name": "Zweibrücken",
+    "lat": 49.249189,
+    "lng": 7.363114,
+    "density": 472
+  },
+  "07318": {
+    "name": "Speyer",
+    "lat": 49.316172,
+    "lng": 8.436572,
+    "density": 1160
+  },
+  "07332": {
+    "name": "Bad Dürkheim",
+    "lat": 49.460397,
+    "lng": 8.169191,
+    "density": 187
+  },
+  "07334": {
+    "name": "Germersheim",
+    "lat": 49.21765,
+    "lng": 8.374177,
+    "density": 1002
+  },
+  "07336": {
+    "name": "Kusel",
+    "lat": 49.537633,
+    "lng": 7.400548,
+    "density": 371
+  },
+  "08111": {
+    "name": "Stuttgart",
+    "lat": 48.775817,
+    "lng": 9.177734,
+    "density": 2955
+  },
+  "08115": {
+    "name": "Böblingen",
+    "lat": 48.685296,
+    "lng": 9.009663,
+    "density": 1319
+  },
+  "08116": {
+    "name": "Esslingen",
+    "lat": 48.741347,
+    "lng": 9.309565,
+    "density": 2072
+  },
+  "08118": {
+    "name": "Ludwigsburg",
+    "lat": 48.896233,
+    "lng": 9.190393,
+    "density": 2143
+  },
+  "08117": {
+    "name": "Göppingen",
+    "lat": 48.703267,
+    "lng": 9.653964,
+    "density": 995
+  },
+  "08121": {
+    "name": "Heilbronn",
+    "lat": 49.140428,
+    "lng": 9.217953,
+    "density": 1321
+  },
+  "08127": {
+    "name": "Schwäbisch Hall",
+    "lat": 49.112856,
+    "lng": 9.735145,
+    "density": 409
+  },
+  "08135": {
+    "name": "Heidenheim",
+    "lat": 48.677736,
+    "lng": 10.154639,
+    "density": 473
+  },
+  "08212": {
+    "name": "Karlsruhe",
+    "lat": 49.009626,
+    "lng": 8.405282,
+    "density": 1782
+  },
+  "08211": {
+    "name": "Baden-Baden",
+    "lat": 48.761794,
+    "lng": 8.239951,
+    "density": 406
+  },
+  "08221": {
+    "name": "Heidelberg",
+    "lat": 49.410524,
+    "lng": 8.705543,
+    "density": 1431
+  },
+  "08216": {
+    "name": "Rastatt",
+    "lat": 48.857703,
+    "lng": 8.202529,
+    "density": 860
+  },
+  "08222": {
+    "name": "Mannheim",
+    "lat": 49.48778,
+    "lng": 8.466275,
+    "density": 2194
+  },
+  "08231": {
+    "name": "Pforzheim",
+    "lat": 48.891285,
+    "lng": 8.699166,
+    "density": 1377
+  },
+  "08235": {
+    "name": "Calw",
+    "lat": 48.713372,
+    "lng": 8.741194,
+    "density": 418
+  },
+  "08237": {
+    "name": "Freudenstadt",
+    "lat": 48.463876,
+    "lng": 8.411368,
+    "density": 279
+  },
+  "08311": {
+    "name": "Freiburg im Breisgau",
+    "lat": 47.994786,
+    "lng": 7.849877,
+    "density": 1552
+  },
+  "08316": {
+    "name": "Emmendingen",
+    "lat": 48.122053,
+    "lng": 7.847625,
+    "density": 873
+  },
+  "08325": {
+    "name": "Rottweil",
+    "lat": 48.167866,
+    "lng": 8.627337,
+    "density": 348
+  },
+  "08335": {
+    "name": "Konstanz",
+    "lat": 47.662757,
+    "lng": 9.175957,
+    "density": 1606
+  },
+  "08327": {
+    "name": "Tuttlingen",
+    "lat": 47.983725,
+    "lng": 8.818761,
+    "density": 410
+  },
+  "08336": {
+    "name": "Lörrach",
+    "lat": 47.612096,
+    "lng": 7.659191,
+    "density": 1304
+  },
+  "08337": {
+    "name": "Waldshut",
+    "lat": 47.632439,
+    "lng": 8.271113,
+    "density": 321
+  },
+  "08416": {
+    "name": "Tübingen",
+    "lat": 48.520863,
+    "lng": 9.054572,
+    "density": 854
+  },
+  "08415": {
+    "name": "Reutlingen",
+    "lat": 48.49208,
+    "lng": 9.212006,
+    "density": 1365
+  },
+  "08421": {
+    "name": "Ulm",
+    "lat": 48.398454,
+    "lng": 9.990402,
+    "density": 1094
+  },
+  "08436": {
+    "name": "Ravensburg",
+    "lat": 47.78366,
+    "lng": 9.615089,
+    "density": 550
+  },
+  "08426": {
+    "name": "Biberach",
+    "lat": 48.097465,
+    "lng": 9.79203,
+    "density": 479
+  },
+  "08437": {
+    "name": "Sigmaringen",
+    "lat": 48.086623,
+    "lng": 9.214788,
+    "density": 182
+  },
+  "09161": {
+    "name": "Ingolstadt",
+    "lat": 48.76542,
+    "lng": 11.423387,
+    "density": 1059
+  },
+  "09163": {
+    "name": "Rosenheim",
+    "lat": 47.856358,
+    "lng": 12.128932,
+    "density": 1754
+  },
+  "09162": {
+    "name": "München",
+    "lat": 48.137683,
+    "lng": 11.575997,
+    "density": 4844
+  },
+  "09171": {
+    "name": "Altötting",
+    "lat": 48.227986,
+    "lng": 12.67892,
+    "density": 569
+  },
+  "09175": {
+    "name": "Ebersberg",
+    "lat": 48.078429,
+    "lng": 11.968817,
+    "density": 304
+  },
+  "09174": {
+    "name": "Dachau",
+    "lat": 48.263327,
+    "lng": 11.437493,
+    "density": 1348
+  },
+  "09178": {
+    "name": "Freising",
+    "lat": 48.403627,
+    "lng": 11.748361,
+    "density": 552
+  },
+  "09176": {
+    "name": "Eichstätt",
+    "lat": 48.891094,
+    "lng": 11.185203,
+    "density": 291
+  },
+  "09177": {
+    "name": "Erding",
+    "lat": 48.306323,
+    "lng": 11.907169,
+    "density": 681
+  },
+  "09180": {
+    "name": "Garmisch-Partenkirchen",
+    "lat": 47.492447,
+    "lng": 11.086118,
+    "density": 138
+  },
+  "09179": {
+    "name": "Fürstenfeldbruck",
+    "lat": 48.182775,
+    "lng": 11.253092,
+    "density": 1151
+  },
+  "09181": {
+    "name": "Landsberg am Lech",
+    "lat": 48.049514,
+    "lng": 10.877828,
+    "density": 505
+  },
+  "09183": {
+    "name": "Mühldorf a.Inn",
+    "lat": 48.241864,
+    "lng": 12.524963,
+    "density": 765
+  },
+  "09182": {
+    "name": "Miesbach",
+    "lat": 47.788844,
+    "lng": 11.834173,
+    "density": 357
+  },
+  "09186": {
+    "name": "Pfaffenhofen a.d.Ilm",
+    "lat": 48.529783,
+    "lng": 11.503851,
+    "density": 291
+  },
+  "09188": {
+    "name": "Starnberg",
+    "lat": 47.996607,
+    "lng": 11.33837,
+    "density": 396
+  },
+  "09184": {
+    "name": "München",
+    "lat": 48.249173,
+    "lng": 11.65188,
+    "density": 627
+  },
+  "09262": {
+    "name": "Passau",
+    "lat": 48.572926,
+    "lng": 13.458449,
+    "density": 762
+  },
+  "09261": {
+    "name": "Landshut",
+    "lat": 48.536978,
+    "lng": 12.152143,
+    "density": 1092
+  },
+  "09263": {
+    "name": "Straubing",
+    "lat": 48.881802,
+    "lng": 12.56951,
+    "density": 725
+  },
+  "09189": {
+    "name": "Traunstein",
+    "lat": 47.868787,
+    "lng": 12.647604,
+    "density": 430
+  },
+  "09271": {
+    "name": "Deggendorf",
+    "lat": 48.842204,
+    "lng": 12.960122,
+    "density": 454
+  },
+  "09273": {
+    "name": "Kelheim",
+    "lat": 48.919056,
+    "lng": 11.869879,
+    "density": 142
+  },
+  "09276": {
+    "name": "Regen",
+    "lat": 48.970244,
+    "lng": 13.126196,
+    "density": 169
+  },
+  "09361": {
+    "name": "Amberg",
+    "lat": 49.445278,
+    "lng": 11.856142,
+    "density": 849
+  },
+  "09363": {
+    "name": "Weiden i.d.OPf.",
+    "lat": 49.676076,
+    "lng": 12.160209,
+    "density": 601
+  },
+  "09372": {
+    "name": "Cham",
+    "lat": 49.219124,
+    "lng": 12.667061,
+    "density": 216
+  },
+  "09362": {
+    "name": "Regensburg",
+    "lat": 49.015249,
+    "lng": 12.101745,
+    "density": 1872
+  },
+  "09373": {
+    "name": "Neumarkt i.d.OPf.",
+    "lat": 49.279417,
+    "lng": 11.45894,
+    "density": 520
+  },
+  "09376": {
+    "name": "Schwandorf",
+    "lat": 49.327638,
+    "lng": 12.108976,
+    "density": 241
+  },
+  "09461": {
+    "name": "Bamberg",
+    "lat": 49.893387,
+    "lng": 10.886786,
+    "density": 1412
+  },
+  "09374": {
+    "name": "Neustadt a.d.Waldnaab",
+    "lat": 49.732495,
+    "lng": 12.175697,
+    "density": 610
+  },
+  "09377": {
+    "name": "Tirschenreuth",
+    "lat": 49.878232,
+    "lng": 12.33646,
+    "density": 82
+  },
+  "09463": {
+    "name": "Coburg",
+    "lat": 50.258421,
+    "lng": 10.964232,
+    "density": 850
+  },
+  "09462": {
+    "name": "Bayreuth",
+    "lat": 49.943752,
+    "lng": 11.575301,
+    "density": 1090
+  },
+  "09464": {
+    "name": "Hof",
+    "lat": 50.316521,
+    "lng": 11.913545,
+    "density": 806
+  },
+  "09473": {
+    "name": "Coburg",
+    "lat": 50.218128,
+    "lng": 11.077094,
+    "density": 232
+  },
+  "09476": {
+    "name": "Kronach",
+    "lat": 50.239015,
+    "lng": 11.325279,
+    "density": 248
+  },
+  "09474": {
+    "name": "Forchheim",
+    "lat": 49.720292,
+    "lng": 11.0594,
+    "density": 743
+  },
+  "09477": {
+    "name": "Kulmbach",
+    "lat": 50.10807,
+    "lng": 11.455614,
+    "density": 287
+  },
+  "09562": {
+    "name": "Erlangen",
+    "lat": 49.59508,
+    "lng": 11.003274,
+    "density": 1506
+  },
+  "09478": {
+    "name": "Lichtenfels",
+    "lat": 50.146042,
+    "lng": 11.064046,
+    "density": 168
+  },
+  "09561": {
+    "name": "Ansbach",
+    "lat": 49.303682,
+    "lng": 10.577254,
+    "density": 408
+  },
+  "09563": {
+    "name": "Fürth",
+    "lat": 49.478592,
+    "lng": 10.987404,
+    "density": 2084
+  },
+  "09565": {
+    "name": "Schwabach",
+    "lat": 49.328888,
+    "lng": 11.024451,
+    "density": 1001
+  },
+  "09564": {
+    "name": "Nürnberg",
+    "lat": 49.450938,
+    "lng": 11.075269,
+    "density": 2840
+  },
+  "09571": {
+    "name": "Ansbach",
+    "lat": 49.288491,
+    "lng": 10.66144,
+    "density": 178
+  },
+  "09661": {
+    "name": "Aschaffenburg",
+    "lat": 49.973506,
+    "lng": 9.147832,
+    "density": 1170
+  },
+  "09576": {
+    "name": "Roth",
+    "lat": 49.244523,
+    "lng": 11.090664,
+    "density": 264
+  },
+  "09662": {
+    "name": "Schweinfurt",
+    "lat": 50.045505,
+    "lng": 10.230301,
+    "density": 1526
+  },
+  "09672": {
+    "name": "Bad Kissingen",
+    "lat": 50.200795,
+    "lng": 10.077888,
+    "density": 332
+  },
+  "09663": {
+    "name": "Würzburg",
+    "lat": 49.79393,
+    "lng": 9.93725,
+    "density": 1521
+  },
+  "09675": {
+    "name": "Kitzingen",
+    "lat": 49.736047,
+    "lng": 10.159239,
+    "density": 488
+  },
+  "09676": {
+    "name": "Miltenberg",
+    "lat": 49.701266,
+    "lng": 9.257405,
+    "density": 155
+  },
+  "09763": {
+    "name": "Kempten (Allgäu)",
+    "lat": 47.724016,
+    "lng": 10.317823,
+    "density": 1069
+  },
+  "09764": {
+    "name": "Memmingen",
+    "lat": 47.984959,
+    "lng": 10.181558,
+    "density": 630
+  },
+  "09761": {
+    "name": "Augsburg",
+    "lat": 48.368384,
+    "lng": 10.897594,
+    "density": 2050
+  },
+  "09762": {
+    "name": "Kaufbeuren",
+    "lat": 47.879698,
+    "lng": 10.620583,
+    "density": 1154
+  },
+  "09679": {
+    "name": "Würzburg",
+    "lat": 49.927963,
+    "lng": 10.027047,
+    "density": 115
+  },
+  "09775": {
+    "name": "Neu-Ulm",
+    "lat": 48.392999,
+    "lng": 9.998683,
+    "density": 774
+  },
+  "09774": {
+    "name": "Günzburg",
+    "lat": 48.45447,
+    "lng": 10.281413,
+    "density": 387
+  },
+  "09773": {
+    "name": "Dillingen a.d.Donau",
+    "lat": 48.577159,
+    "lng": 10.496633,
+    "density": 262
+  },
+  "09776": {
+    "name": "Lindau (Bodensee)",
+    "lat": 47.546458,
+    "lng": 9.684376,
+    "density": 782
+  },
+  "01053": {
+    "name": "Herzogtum Lauenburg",
+    "lat": 53.5936648,
+    "lng": 10.6643262,
+    "density": 0
+  },
+  "01054": {
+    "name": "Nordfriesland",
+    "lat": 54.6591472,
+    "lng": 8.9982188,
+    "density": 0
+  },
+  "01055": {
+    "name": "Ostholstein",
+    "lat": 54.1766629,
+    "lng": 10.84762,
+    "density": 0
+  },
+  "01058": {
+    "name": "Rendsburg-Eckernförde",
+    "lat": 54.3015523,
+    "lng": 9.7686088,
+    "density": 0
+  },
+  "01059": {
+    "name": "Schleswig-Flensburg",
+    "lat": 54.5797194,
+    "lng": 9.5331938,
+    "density": 0
+  },
+  "01061": {
+    "name": "Steinburg",
+    "lat": 53.9817077,
+    "lng": 9.4958058,
+    "density": 0
+  },
+  "01062": {
+    "name": "Stormarn",
+    "lat": 53.7215127,
+    "lng": 10.3586145,
+    "density": 0
+  },
+  "03241": {
+    "name": "Region Hannover",
+    "lat": 52.4027586,
+    "lng": 9.8010256,
+    "density": 0
+  },
+  "03252": {
+    "name": "Hameln-Pyrmont",
+    "lat": 52.0967048,
+    "lng": 9.4156812,
+    "density": 0
+  },
+  "03257": {
+    "name": "Schaumburg",
+    "lat": 52.2744353,
+    "lng": 9.2090233,
+    "density": 0
+  },
+  "03353": {
+    "name": "Harburg",
+    "lat": 53.4562216,
+    "lng": 9.9872112,
+    "density": 0
+  },
+  "03354": {
+    "name": "Lüchow-Dannenberg",
+    "lat": 53.0479053,
+    "lng": 11.1762573,
+    "density": 0
+  },
+  "03358": {
+    "name": "Heidekreis",
+    "lat": 52.8217435,
+    "lng": 9.6601426,
+    "density": 0
+  },
+  "03403": {
+    "name": "Oldenburg (Oldenburg)",
+    "lat": 53.1389753,
+    "lng": 8.2146017,
+    "density": 0
+  },
+  "03451": {
+    "name": "Ammerland",
+    "lat": 53.2071488,
+    "lng": 8.0057609,
+    "density": 0
+  },
+  "03454": {
+    "name": "Emsland",
+    "lat": 52.6986304,
+    "lng": 7.3661343,
+    "density": 0
+  },
+  "03455": {
+    "name": "Friesland",
+    "lat": 53.467993,
+    "lng": 8.0221914,
+    "density": 0
+  },
+  "03456": {
+    "name": "Grafschaft Bentheim",
+    "lat": 52.4472246,
+    "lng": 7.109039,
+    "density": 0
+  },
+  "03458": {
+    "name": "Oldenburg",
+    "lat": 53.1389753,
+    "lng": 8.2146017,
+    "density": 0
+  },
+  "03459": {
+    "name": "Osnabrück",
+    "lat": 52.2719595,
+    "lng": 8.047635,
+    "density": 0
+  },
+  "03461": {
+    "name": "Wesermarsch",
+    "lat": 53.3573141,
+    "lng": 8.3454765,
+    "density": 0
+  },
+  "05162": {
+    "name": "Rhein-Kreis Neuss",
+    "lat": 51.175917,
+    "lng": 6.6599996,
+    "density": 0
+  },
+  "05362": {
+    "name": "Rhein-Erft-Kreis",
+    "lat": 50.90334,
+    "lng": 6.763334,
+    "density": 0
+  },
+  "05374": {
+    "name": "Oberbergischer Kreis",
+    "lat": 51.0346132,
+    "lng": 7.5243532,
+    "density": 0
+  },
+  "05378": {
+    "name": "Rheinisch-Bergischer Kreis",
+    "lat": 51.0140372,
+    "lng": 7.1716132,
+    "density": 0
+  },
+  "05382": {
+    "name": "Rhein-Sieg-Kreis",
+    "lat": 50.7527986,
+    "lng": 7.3813038,
+    "density": 0
+  },
+  "05766": {
+    "name": "Lippe",
+    "lat": 51.9917626,
+    "lng": 8.9165724,
+    "density": 0
+  },
+  "05770": {
+    "name": "Minden-Lübbecke",
+    "lat": 52.3214469,
+    "lng": 8.711927,
+    "density": 0
+  },
+  "05954": {
+    "name": "Ennepe-Ruhr-Kreis",
+    "lat": 51.3485855,
+    "lng": 7.2643242,
+    "density": 0
+  },
+  "05958": {
+    "name": "Hochsauerlandkreis",
+    "lat": 51.3208265,
+    "lng": 8.268492,
+    "density": 0
+  },
+  "05962": {
+    "name": "Märkischer Kreis",
+    "lat": 51.2734858,
+    "lng": 7.7274266,
+    "density": 0
+  },
+  "05970": {
+    "name": "Siegen-Wittgenstein",
+    "lat": 50.9175961,
+    "lng": 8.137686,
+    "density": 0
+  },
+  "06432": {
+    "name": "Darmstadt-Dieburg",
+    "lat": 49.8621782,
+    "lng": 8.8776438,
+    "density": 0
+  },
+  "06434": {
+    "name": "Hochtaunuskreis",
+    "lat": 50.2853755,
+    "lng": 8.5036801,
+    "density": 0
+  },
+  "06435": {
+    "name": "Main-Kinzig-Kreis",
+    "lat": 50.2119793,
+    "lng": 9.1521552,
+    "density": 0
+  },
+  "06436": {
+    "name": "Main-Taunus-Kreis",
+    "lat": 50.0995751,
+    "lng": 8.4264122,
+    "density": 0
+  },
+  "06437": {
+    "name": "Odenwaldkreis",
+    "lat": 49.6634191,
+    "lng": 8.9663284,
+    "density": 0
+  },
+  "06438": {
+    "name": "Offenbach",
+    "lat": 50.1055002,
+    "lng": 8.7610698,
+    "density": 0
+  },
+  "06439": {
+    "name": "Rheingau-Taunus-Kreis",
+    "lat": 50.1339395,
+    "lng": 8.0701608,
+    "density": 0
+  },
+  "06440": {
+    "name": "Wetteraukreis",
+    "lat": 50.3310534,
+    "lng": 8.9338049,
+    "density": 0
+  },
+  "06532": {
+    "name": "Lahn-Dill-Kreis",
+    "lat": 50.6390064,
+    "lng": 8.3265327,
+    "density": 0
+  },
+  "06533": {
+    "name": "Limburg-Weilburg",
+    "lat": 50.4375507,
+    "lng": 8.2003467,
+    "density": 0
+  },
+  "06534": {
+    "name": "Marburg-Biedenkopf",
+    "lat": 50.8330156,
+    "lng": 8.7332066,
+    "density": 0
+  },
+  "06535": {
+    "name": "Vogelsbergkreis",
+    "lat": 50.6412263,
+    "lng": 9.258772,
+    "density": 0
+  },
+  "06632": {
+    "name": "Hersfeld-Rotenburg",
+    "lat": 50.9326685,
+    "lng": 9.7392113,
+    "density": 0
+  },
+  "06633": {
+    "name": "Kassel",
+    "lat": 51.3157833,
+    "lng": 9.4978479,
+    "density": 0
+  },
+  "06634": {
+    "name": "Schwalm-Eder-Kreis",
+    "lat": 51.0152435,
+    "lng": 9.3270844,
+    "density": 0
+  },
+  "06635": {
+    "name": "Waldeck-Frankenberg",
+    "lat": 51.14348,
+    "lng": 8.8660519,
+    "density": 0
+  },
+  "06636": {
+    "name": "Werra-Meißner-Kreis",
+    "lat": 51.2064861,
+    "lng": 9.8919181,
+    "density": 0
+  },
+  "07135": {
+    "name": "Cochem-Zell",
+    "lat": 50.1410231,
+    "lng": 7.1894684,
+    "density": 0
+  },
+  "07137": {
+    "name": "Mayen-Koblenz",
+    "lat": 50.3184377,
+    "lng": 7.2586006,
+    "density": 0
+  },
+  "07140": {
+    "name": "Rhein-Hunsrück-Kreis",
+    "lat": 50.0215164,
+    "lng": 7.4890547,
+    "density": 0
+  },
+  "07141": {
+    "name": "Rhein-Lahn-Kreis",
+    "lat": 50.2649233,
+    "lng": 7.8606742,
+    "density": 0
+  },
+  "07143": {
+    "name": "Westerwaldkreis",
+    "lat": 50.5568937,
+    "lng": 7.8657066,
+    "density": 0
+  },
+  "07231": {
+    "name": "Bernkastel-Wittlich",
+    "lat": 49.9294731,
+    "lng": 6.9384263,
+    "density": 0
+  },
+  "07232": {
+    "name": "Eifelkreis Bitburg-Prüm",
+    "lat": 50.0375377,
+    "lng": 6.3976527,
+    "density": 0
+  },
+  "07233": {
+    "name": "Vulkaneifel",
+    "lat": 50.2316701,
+    "lng": 6.7684957,
+    "density": 0
+  },
+  "07235": {
+    "name": "Trier-Saarburg",
+    "lat": 49.71724,
+    "lng": 6.8431834,
+    "density": 0
+  },
+  "07331": {
+    "name": "Alzey-Worms",
+    "lat": 49.7543078,
+    "lng": 8.1422038,
+    "density": 0
+  },
+  "07333": {
+    "name": "Donnersbergkreis",
+    "lat": 49.639283,
+    "lng": 7.9104292,
+    "density": 0
+  },
+  "07335": {
+    "name": "Kaiserslautern",
+    "lat": 49.4432174,
+    "lng": 7.7689951,
+    "density": 0
+  },
+  "07337": {
+    "name": "Südliche Weinstraße",
+    "lat": 49.1848072,
+    "lng": 8.063071,
+    "density": 0
+  },
+  "07338": {
+    "name": "Rhein-Pfalz-Kreis",
+    "lat": 49.4294558,
+    "lng": 8.3140526,
+    "density": 0
+  },
+  "07339": {
+    "name": "Mainz-Bingen",
+    "lat": 49.9076453,
+    "lng": 8.1207846,
+    "density": 0
+  },
+  "07340": {
+    "name": "Südwestpfalz",
+    "lat": 49.2225957,
+    "lng": 7.6196712,
+    "density": 0
+  },
+  "08119": {
+    "name": "Rems-Murr-Kreis",
+    "lat": 48.8966799,
+    "lng": 9.5037124,
+    "density": 0
+  },
+  "08125": {
+    "name": "Heilbronn",
+    "lat": 49.142291,
+    "lng": 9.218655,
+    "density": 0
+  },
+  "08126": {
+    "name": "Hohenlohekreis",
+    "lat": 49.2633388,
+    "lng": 9.621973,
+    "density": 0
+  },
+  "08128": {
+    "name": "Main-Tauber-Kreis",
+    "lat": 49.5714135,
+    "lng": 9.6710459,
+    "density": 0
+  },
+  "08136": {
+    "name": "Ostalbkreis",
+    "lat": 48.8876732,
+    "lng": 10.0992474,
+    "density": 0
+  },
+  "08215": {
+    "name": "Karlsruhe",
+    "lat": 49.0068705,
+    "lng": 8.4034195,
+    "density": 0
+  },
+  "08225": {
+    "name": "Neckar-Odenwald-Kreis",
+    "lat": 49.4678557,
+    "lng": 9.2709386,
+    "density": 0
+  },
+  "08226": {
+    "name": "Rhein-Neckar-Kreis",
+    "lat": 49.3999478,
+    "lng": 8.5655886,
+    "density": 0
+  },
+  "08236": {
+    "name": "Enzkreis",
+    "lat": 48.9182433,
+    "lng": 8.8432249,
+    "density": 0
+  },
+  "08315": {
+    "name": "Breisgau-Hochschwarzwald",
+    "lat": 47.941164,
+    "lng": 7.8471664,
+    "density": 0
+  },
+  "08317": {
+    "name": "Ortenaukreis",
+    "lat": 48.4376829,
+    "lng": 8.0098512,
+    "density": 0
+  },
+  "08326": {
+    "name": "Schwarzwald-Baar-Kreis",
+    "lat": 47.9801796,
+    "lng": 8.4890803,
+    "density": 0
+  },
+  "08417": {
+    "name": "Zollernalbkreis",
+    "lat": 48.2603683,
+    "lng": 8.9124498,
+    "density": 0
+  },
+  "08425": {
+    "name": "Alb-Donau-Kreis",
+    "lat": 48.3869659,
+    "lng": 9.7286993,
+    "density": 0
+  },
+  "08435": {
+    "name": "Bodenseekreis",
+    "lat": 47.7309856,
+    "lng": 9.3752367,
+    "density": 0
+  },
+  "09172": {
+    "name": "Berchtesgadener Land",
+    "lat": 47.7130126,
+    "lng": 12.8184933,
+    "density": 0
+  },
+  "09173": {
+    "name": "Bad Tölz-Wolfratshausen",
+    "lat": 47.7376726,
+    "lng": 11.5263504,
+    "density": 0
+  },
+  "09185": {
+    "name": "Neuburg-Schrobenhausen",
+    "lat": 48.64367,
+    "lng": 11.2304216,
+    "density": 0
+  },
+  "09187": {
+    "name": "Rosenheim",
+    "lat": 47.8557873,
+    "lng": 12.1272983,
+    "density": 0
+  },
+  "09190": {
+    "name": "Weilheim-Schongau",
+    "lat": 47.8059338,
+    "lng": 11.0315421,
+    "density": 0
+  },
+  "09272": {
+    "name": "Freyung-Grafenau",
+    "lat": 48.81666,
+    "lng": 13.481332,
+    "density": 0
+  },
+  "09274": {
+    "name": "Landshut",
+    "lat": 48.536217,
+    "lng": 12.1516551,
+    "density": 0
+  },
+  "09275": {
+    "name": "Passau",
+    "lat": 48.5748229,
+    "lng": 13.4609744,
+    "density": 0
+  },
+  "09277": {
+    "name": "Rottal-Inn",
+    "lat": 48.4118615,
+    "lng": 12.8459962,
+    "density": 0
+  },
+  "09278": {
+    "name": "Straubing-Bogen",
+    "lat": 48.9176201,
+    "lng": 12.7165209,
+    "density": 0
+  },
+  "09279": {
+    "name": "Dingolfing-Landau",
+    "lat": 48.6393657,
+    "lng": 12.6617349,
+    "density": 0
+  },
+  "09371": {
+    "name": "Amberg-Sulzbach",
+    "lat": 49.4801852,
+    "lng": 11.7836407,
+    "density": 0
+  },
+  "09375": {
+    "name": "Regensburg",
+    "lat": 49.0195333,
+    "lng": 12.0974869,
+    "density": 0
+  },
+  "09471": {
+    "name": "Bamberg",
+    "lat": 49.8916044,
+    "lng": 10.8868478,
+    "density": 0
+  },
+  "09472": {
+    "name": "Bayreuth",
+    "lat": 49.9446345,
+    "lng": 11.5743543,
+    "density": 0
+  },
+  "09475": {
+    "name": "Hof",
+    "lat": 50.3187507,
+    "lng": 11.9162992,
+    "density": 0
+  },
+  "09479": {
+    "name": "Wunsiedel i.Fichtelgebirge",
+    "lat": 50.0991112,
+    "lng": 12.0167304,
+    "density": 0
+  },
+  "09572": {
+    "name": "Erlangen-Höchstadt",
+    "lat": 49.6306886,
+    "lng": 10.8471804,
+    "density": 0
+  },
+  "09573": {
+    "name": "Fürth",
+    "lat": 49.4885711,
+    "lng": 10.9587203,
+    "density": 0
+  },
+  "09574": {
+    "name": "Nürnberger Land",
+    "lat": 49.5091089,
+    "lng": 11.3569618,
+    "density": 0
+  },
+  "09575": {
+    "name": "Neustadt a.d.Aisch-Bad Windsheim",
+    "lat": 49.583431,
+    "lng": 10.4145486,
+    "density": 0
+  },
+  "09577": {
+    "name": "Weißenburg-Gunzenhausen",
+    "lat": 49.0315646,
+    "lng": 10.9297625,
+    "density": 0
+  },
+  "09671": {
+    "name": "Aschaffenburg",
+    "lat": 49.9706701,
+    "lng": 9.1384857,
+    "density": 0
+  },
+  "09673": {
+    "name": "Rhön-Grabfeld",
+    "lat": 50.3805896,
+    "lng": 10.2055037,
+    "density": 0
+  },
+  "09674": {
+    "name": "Haßberge",
+    "lat": 50.0459451,
+    "lng": 10.5904874,
+    "density": 0
+  },
+  "09677": {
+    "name": "Main-Spessart",
+    "lat": 49.9938504,
+    "lng": 9.7080547,
+    "density": 0
+  },
+  "09678": {
+    "name": "Schweinfurt",
+    "lat": 50.0451485,
+    "lng": 10.2340647,
+    "density": 0
+  },
+  "09771": {
+    "name": "Aichach-Friedberg",
+    "lat": 48.406034,
+    "lng": 11.062766,
+    "density": 0
+  },
+  "09772": {
+    "name": "Augsburg",
+    "lat": 48.3690341,
+    "lng": 10.8979522,
+    "density": 0
+  },
+  "09777": {
+    "name": "Ostallgäu",
+    "lat": 47.8126248,
+    "lng": 10.5586289,
+    "density": 0
+  },
+  "09778": {
+    "name": "Unterallgäu",
+    "lat": 48.0248748,
+    "lng": 10.4570746,
+    "density": 0
+  },
+  "09779": {
+    "name": "Donau-Ries",
+    "lat": 48.8100863,
+    "lng": 10.6998994,
+    "density": 0
+  },
+  "09780": {
+    "name": "Oberallgäu",
+    "lat": 47.5669373,
+    "lng": 10.2234504,
+    "density": 0
+  }
+}

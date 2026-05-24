@@ -1,0 +1,1594 @@
+{
+  "10041": {
+    "name": "Regionalverb. Saarbrücken",
+    "pricePerSqm": 1953
+  },
+  "10042": {
+    "name": "Merzig-Wadern",
+    "pricePerSqm": 2522
+  },
+  "10043": {
+    "name": "Neunkirchen",
+    "pricePerSqm": 1783
+  },
+  "10044": {
+    "name": "Saarlouis",
+    "pricePerSqm": 2110
+  },
+  "10045": {
+    "name": "Saarpfalz-Kreis",
+    "pricePerSqm": 2166
+  },
+  "10046": {
+    "name": "St. Wendel",
+    "pricePerSqm": 1771
+  },
+  "11000": {
+    "name": "Berlin",
+    "pricePerSqm": 4870
+  },
+  "12051": {
+    "name": "Brandenburg an der Havel",
+    "pricePerSqm": 2841
+  },
+  "12052": {
+    "name": "Cottbus",
+    "pricePerSqm": 2282
+  },
+  "12053": {
+    "name": "Frankfurt (Oder)",
+    "pricePerSqm": 2651
+  },
+  "12054": {
+    "name": "Potsdam",
+    "pricePerSqm": 4545
+  },
+  "12060": {
+    "name": "Barnim",
+    "pricePerSqm": 3085
+  },
+  "12061": {
+    "name": "Dahme-Spreewald",
+    "pricePerSqm": 3823
+  },
+  "12062": {
+    "name": "Elbe-Elster",
+    "pricePerSqm": 1224
+  },
+  "12063": {
+    "name": "Havelland",
+    "pricePerSqm": 3542
+  },
+  "12064": {
+    "name": "Märkisch-Oderland",
+    "pricePerSqm": 2986
+  },
+  "12065": {
+    "name": "Oberhavel",
+    "pricePerSqm": 3435
+  },
+  "12066": {
+    "name": "Oberspreewald-Lausitz",
+    "pricePerSqm": 1865
+  },
+  "12067": {
+    "name": "Oder-Spree",
+    "pricePerSqm": 2851
+  },
+  "12068": {
+    "name": "Ostprignitz-Ruppin",
+    "pricePerSqm": 2875
+  },
+  "12069": {
+    "name": "Potsdam-Mittelmark",
+    "pricePerSqm": 3794
+  },
+  "12070": {
+    "name": "Prignitz",
+    "pricePerSqm": 2521
+  },
+  "12071": {
+    "name": "Spree-Neiße",
+    "pricePerSqm": 1722
+  },
+  "12072": {
+    "name": "Teltow-Fläming",
+    "pricePerSqm": 2904
+  },
+  "12073": {
+    "name": "Uckermark",
+    "pricePerSqm": 1974
+  },
+  "13003": {
+    "name": "Rostock",
+    "pricePerSqm": 3112
+  },
+  "13004": {
+    "name": "Schwerin",
+    "pricePerSqm": 2630
+  },
+  "13071": {
+    "name": "Mecklenburgische Seenplatte",
+    "pricePerSqm": 2170
+  },
+  "13073": {
+    "name": "Vorpommern-Rügen",
+    "pricePerSqm": 3424
+  },
+  "13074": {
+    "name": "Nordwestmecklenburg",
+    "pricePerSqm": 2781
+  },
+  "13075": {
+    "name": "Vorpommern-Greifswald",
+    "pricePerSqm": 3832
+  },
+  "13076": {
+    "name": "Ludwigslust-Parchim",
+    "pricePerSqm": 1930
+  },
+  "14511": {
+    "name": "Chemnitz",
+    "pricePerSqm": 1670
+  },
+  "14521": {
+    "name": "Erzgebirgskreis",
+    "pricePerSqm": 1208
+  },
+  "14522": {
+    "name": "Mittelsachsen",
+    "pricePerSqm": 1450
+  },
+  "14523": {
+    "name": "Vogtlandkreis",
+    "pricePerSqm": 1196
+  },
+  "14524": {
+    "name": "Zwickau",
+    "pricePerSqm": 1307
+  },
+  "14612": {
+    "name": "Dresden",
+    "pricePerSqm": 3042
+  },
+  "14625": {
+    "name": "Bautzen",
+    "pricePerSqm": 1662
+  },
+  "14626": {
+    "name": "Görlitz",
+    "pricePerSqm": 1226
+  },
+  "14627": {
+    "name": "Meißen",
+    "pricePerSqm": 2238
+  },
+  "14628": {
+    "name": "Sächs. Schweiz-Osterzgebirge",
+    "pricePerSqm": 2155
+  },
+  "14713": {
+    "name": "Leipzig",
+    "pricePerSqm": 3210
+  },
+  "14729": {
+    "name": "Leipzig",
+    "pricePerSqm": 2323
+  },
+  "14730": {
+    "name": "Nordsachsen",
+    "pricePerSqm": 1765
+  },
+  "15001": {
+    "name": "Dessau-Roßlau",
+    "pricePerSqm": 1717
+  },
+  "15002": {
+    "name": "Halle (Saale)",
+    "pricePerSqm": 2358
+  },
+  "15003": {
+    "name": "Magdeburg",
+    "pricePerSqm": 2215
+  },
+  "15081": {
+    "name": "Altmarkkreis Salzwedel",
+    "pricePerSqm": 1749
+  },
+  "15082": {
+    "name": "Anhalt-Bitterfeld",
+    "pricePerSqm": 1441
+  },
+  "15083": {
+    "name": "Börde",
+    "pricePerSqm": 1646
+  },
+  "15084": {
+    "name": "Burgenlandkreis",
+    "pricePerSqm": 1420
+  },
+  "15085": {
+    "name": "Harz",
+    "pricePerSqm": 1499
+  },
+  "15086": {
+    "name": "Jerichower Land",
+    "pricePerSqm": 1477
+  },
+  "15087": {
+    "name": "Mansfeld-Südharz",
+    "pricePerSqm": 1297
+  },
+  "15088": {
+    "name": "Saalekreis",
+    "pricePerSqm": 1861
+  },
+  "15089": {
+    "name": "Salzlandkreis",
+    "pricePerSqm": 1314
+  },
+  "15090": {
+    "name": "Stendal",
+    "pricePerSqm": 1464
+  },
+  "15091": {
+    "name": "Wittenberg",
+    "pricePerSqm": 1387
+  },
+  "16051": {
+    "name": "Erfurt",
+    "pricePerSqm": 2890
+  },
+  "16052": {
+    "name": "Gera",
+    "pricePerSqm": 1265
+  },
+  "16053": {
+    "name": "Jena",
+    "pricePerSqm": 3298
+  },
+  "16054": {
+    "name": "Suhl",
+    "pricePerSqm": 1756
+  },
+  "16055": {
+    "name": "Weimar",
+    "pricePerSqm": 2672
+  },
+  "16061": {
+    "name": "Eichsfeld",
+    "pricePerSqm": 1410
+  },
+  "16062": {
+    "name": "Nordhausen",
+    "pricePerSqm": 1533
+  },
+  "16063": {
+    "name": "Wartburgkreis",
+    "pricePerSqm": 1501
+  },
+  "16064": {
+    "name": "Unstrut-Hainich-Kreis",
+    "pricePerSqm": 1243
+  },
+  "16065": {
+    "name": "Kyffhäuserkreis",
+    "pricePerSqm": 1289
+  },
+  "16066": {
+    "name": "Schmalkalden-Meiningen",
+    "pricePerSqm": 1420
+  },
+  "16067": {
+    "name": "Gotha",
+    "pricePerSqm": 1695
+  },
+  "16068": {
+    "name": "Sömmerda",
+    "pricePerSqm": 1799
+  },
+  "16069": {
+    "name": "Hildburghausen",
+    "pricePerSqm": 1387
+  },
+  "16070": {
+    "name": "Ilm-Kreis",
+    "pricePerSqm": 1752
+  },
+  "16071": {
+    "name": "Weimarer Land",
+    "pricePerSqm": 2062
+  },
+  "16072": {
+    "name": "Sonneberg",
+    "pricePerSqm": 1420
+  },
+  "16073": {
+    "name": "Saalfeld-Rudolstadt",
+    "pricePerSqm": 1254
+  },
+  "16074": {
+    "name": "Saale-Holzland-Kreis",
+    "pricePerSqm": 1821
+  },
+  "16075": {
+    "name": "Saale-Orla-Kreis",
+    "pricePerSqm": 1190
+  },
+  "16076": {
+    "name": "Greiz",
+    "pricePerSqm": 1133
+  },
+  "16077": {
+    "name": "Altenburger Land",
+    "pricePerSqm": 1179
+  },
+  "08311": {
+    "name": "Freiburg im Breisgau",
+    "pricePerSqm": 5306
+  },
+  "08111": {
+    "name": "Stuttgart",
+    "pricePerSqm": 4756
+  },
+  "08435": {
+    "name": "Bodenseekreis",
+    "pricePerSqm": 4315
+  },
+  "08221": {
+    "name": "Heidelberg",
+    "pricePerSqm": 4312
+  },
+  "08115": {
+    "name": "Böblingen",
+    "pricePerSqm": 4240
+  },
+  "08421": {
+    "name": "Ulm",
+    "pricePerSqm": 4162
+  },
+  "08212": {
+    "name": "Karlsruhe",
+    "pricePerSqm": 4026
+  },
+  "08116": {
+    "name": "Esslingen",
+    "pricePerSqm": 4002
+  },
+  "08118": {
+    "name": "Ludwigsburg",
+    "pricePerSqm": 3908
+  },
+  "08335": {
+    "name": "Konstanz",
+    "pricePerSqm": 3907
+  },
+  "08211": {
+    "name": "Baden-Baden",
+    "pricePerSqm": 3787
+  },
+  "08416": {
+    "name": "Tübingen",
+    "pricePerSqm": 3735
+  },
+  "08315": {
+    "name": "Breisgau-Hochschwarzwald",
+    "pricePerSqm": 3721
+  },
+  "08316": {
+    "name": "Emmendingen",
+    "pricePerSqm": 3573
+  },
+  "08436": {
+    "name": "Ravensburg",
+    "pricePerSqm": 3568
+  },
+  "08119": {
+    "name": "Rems-Murr-Kreis",
+    "pricePerSqm": 3564
+  },
+  "08415": {
+    "name": "Reutlingen",
+    "pricePerSqm": 3557
+  },
+  "08222": {
+    "name": "Mannheim",
+    "pricePerSqm": 3533
+  },
+  "08215": {
+    "name": "Karlsruhe",
+    "pricePerSqm": 3525
+  },
+  "08336": {
+    "name": "Lörrach",
+    "pricePerSqm": 3522
+  },
+  "08125": {
+    "name": "Heilbronn",
+    "pricePerSqm": 3451
+  },
+  "08425": {
+    "name": "Alb-Donau-Kreis",
+    "pricePerSqm": 3423
+  },
+  "08226": {
+    "name": "Rhein-Neckar-Kreis",
+    "pricePerSqm": 3355
+  },
+  "08121": {
+    "name": "Heilbronn",
+    "pricePerSqm": 3352
+  },
+  "08236": {
+    "name": "Enzkreis",
+    "pricePerSqm": 3234
+  },
+  "08426": {
+    "name": "Biberach",
+    "pricePerSqm": 3232
+  },
+  "08216": {
+    "name": "Rastatt",
+    "pricePerSqm": 3191
+  },
+  "08231": {
+    "name": "Pforzheim",
+    "pricePerSqm": 3189
+  },
+  "08337": {
+    "name": "Waldshut",
+    "pricePerSqm": 3163
+  },
+  "08136": {
+    "name": "Ostalbkreis",
+    "pricePerSqm": 3108
+  },
+  "08317": {
+    "name": "Ortenaukreis",
+    "pricePerSqm": 3016
+  },
+  "08126": {
+    "name": "Hohenlohekreis",
+    "pricePerSqm": 2986
+  },
+  "08117": {
+    "name": "Göppingen",
+    "pricePerSqm": 2977
+  },
+  "08327": {
+    "name": "Tuttlingen",
+    "pricePerSqm": 2917
+  },
+  "08235": {
+    "name": "Calw",
+    "pricePerSqm": 2836
+  },
+  "08237": {
+    "name": "Freudenstadt",
+    "pricePerSqm": 2827
+  },
+  "08135": {
+    "name": "Heidenheim",
+    "pricePerSqm": 2743
+  },
+  "08127": {
+    "name": "Schwäbisch Hall",
+    "pricePerSqm": 2656
+  },
+  "08326": {
+    "name": "Schwarzwald-Baar-Kreis",
+    "pricePerSqm": 2645
+  },
+  "08325": {
+    "name": "Rottweil",
+    "pricePerSqm": 2623
+  },
+  "08437": {
+    "name": "Sigmaringen",
+    "pricePerSqm": 2602
+  },
+  "08128": {
+    "name": "Main-Tauber-Kreis",
+    "pricePerSqm": 2471
+  },
+  "08417": {
+    "name": "Zollernalbkreis",
+    "pricePerSqm": 2449
+  },
+  "08225": {
+    "name": "Neckar-Odenwald-Kreis",
+    "pricePerSqm": 2286
+  },
+  "09162": {
+    "name": "München",
+    "pricePerSqm": 8028
+  },
+  "09184": {
+    "name": "München",
+    "pricePerSqm": 7424
+  },
+  "09182": {
+    "name": "Miesbach",
+    "pricePerSqm": 7301
+  },
+  "09188": {
+    "name": "Starnberg",
+    "pricePerSqm": 6975
+  },
+  "09175": {
+    "name": "Ebersberg",
+    "pricePerSqm": 6357
+  },
+  "09180": {
+    "name": "Garmisch-Partenkirchen",
+    "pricePerSqm": 6206
+  },
+  "09179": {
+    "name": "Fürstenfeldbruck",
+    "pricePerSqm": 5651
+  },
+  "09173": {
+    "name": "Bad Tölz-Wolfratshausen",
+    "pricePerSqm": 5543
+  },
+  "09174": {
+    "name": "Dachau",
+    "pricePerSqm": 5527
+  },
+  "09163": {
+    "name": "Rosenheim",
+    "pricePerSqm": 5230
+  },
+  "09187": {
+    "name": "Rosenheim",
+    "pricePerSqm": 5220
+  },
+  "09178": {
+    "name": "Freising",
+    "pricePerSqm": 5193
+  },
+  "09177": {
+    "name": "Erding",
+    "pricePerSqm": 4835
+  },
+  "09172": {
+    "name": "Berchtesgadener Land",
+    "pricePerSqm": 4813
+  },
+  "09261": {
+    "name": "Landshut",
+    "pricePerSqm": 4715
+  },
+  "09362": {
+    "name": "Regensburg",
+    "pricePerSqm": 4713
+  },
+  "09161": {
+    "name": "Ingolstadt",
+    "pricePerSqm": 4702
+  },
+  "09190": {
+    "name": "Weilheim-Schongau",
+    "pricePerSqm": 4698
+  },
+  "09181": {
+    "name": "Landsberg am Lech",
+    "pricePerSqm": 4666
+  },
+  "09771": {
+    "name": "Aichach-Friedberg",
+    "pricePerSqm": 4513
+  },
+  "09776": {
+    "name": "Lindau (Bodensee)",
+    "pricePerSqm": 4342
+  },
+  "09780": {
+    "name": "Oberallgäu",
+    "pricePerSqm": 4275
+  },
+  "09761": {
+    "name": "Augsburg",
+    "pricePerSqm": 4261
+  },
+  "09186": {
+    "name": "Pfaffenhofen a.d. Ilm",
+    "pricePerSqm": 4208
+  },
+  "09763": {
+    "name": "Kempten (Allgäu)",
+    "pricePerSqm": 4090
+  },
+  "09772": {
+    "name": "Augsburg",
+    "pricePerSqm": 4056
+  },
+  "09176": {
+    "name": "Eichstätt",
+    "pricePerSqm": 4056
+  },
+  "09562": {
+    "name": "Erlangen",
+    "pricePerSqm": 4022
+  },
+  "09461": {
+    "name": "Bamberg",
+    "pricePerSqm": 3953
+  },
+  "09189": {
+    "name": "Traunstein",
+    "pricePerSqm": 3902
+  },
+  "09777": {
+    "name": "Ostallgäu",
+    "pricePerSqm": 3837
+  },
+  "09661": {
+    "name": "Aschaffenburg",
+    "pricePerSqm": 3789
+  },
+  "09274": {
+    "name": "Landshut",
+    "pricePerSqm": 3748
+  },
+  "09564": {
+    "name": "Nürnberg",
+    "pricePerSqm": 3720
+  },
+  "09185": {
+    "name": "Neuburg-Schrobenhausen",
+    "pricePerSqm": 3698
+  },
+  "09764": {
+    "name": "Memmingen",
+    "pricePerSqm": 3695
+  },
+  "09778": {
+    "name": "Unterallgäu",
+    "pricePerSqm": 3679
+  },
+  "09375": {
+    "name": "Regensburg",
+    "pricePerSqm": 3653
+  },
+  "09663": {
+    "name": "Würzburg",
+    "pricePerSqm": 3650
+  },
+  "09573": {
+    "name": "Fürth",
+    "pricePerSqm": 3576
+  },
+  "09775": {
+    "name": "Neu-Ulm",
+    "pricePerSqm": 3552
+  },
+  "09572": {
+    "name": "Erlangen-Höchstadt",
+    "pricePerSqm": 3550
+  },
+  "09563": {
+    "name": "Fürth",
+    "pricePerSqm": 3509
+  },
+  "09565": {
+    "name": "Schwabach",
+    "pricePerSqm": 3494
+  },
+  "09273": {
+    "name": "Kelheim",
+    "pricePerSqm": 3455
+  },
+  "09183": {
+    "name": "Mühldorf a. Inn",
+    "pricePerSqm": 3447
+  },
+  "09171": {
+    "name": "Altötting",
+    "pricePerSqm": 3386
+  },
+  "09774": {
+    "name": "Günzburg",
+    "pricePerSqm": 3368
+  },
+  "09263": {
+    "name": "Straubing",
+    "pricePerSqm": 3294
+  },
+  "09373": {
+    "name": "Neumarkt i.d. OPf.",
+    "pricePerSqm": 3236
+  },
+  "09779": {
+    "name": "Donau-Ries",
+    "pricePerSqm": 3212
+  },
+  "09278": {
+    "name": "Straubing-Bogen",
+    "pricePerSqm": 3185
+  },
+  "09574": {
+    "name": "Nürnberger Land",
+    "pricePerSqm": 3170
+  },
+  "09576": {
+    "name": "Roth",
+    "pricePerSqm": 3117
+  },
+  "09762": {
+    "name": "Kaufbeuren",
+    "pricePerSqm": 3085
+  },
+  "09279": {
+    "name": "Dingolfing-Landau",
+    "pricePerSqm": 3083
+  },
+  "09773": {
+    "name": "Dillingen a.d. Donau",
+    "pricePerSqm": 3078
+  },
+  "09262": {
+    "name": "Passau",
+    "pricePerSqm": 3023
+  },
+  "09671": {
+    "name": "Aschaffenburg",
+    "pricePerSqm": 3019
+  },
+  "09462": {
+    "name": "Bayreuth",
+    "pricePerSqm": 3007
+  },
+  "09474": {
+    "name": "Forchheim",
+    "pricePerSqm": 2996
+  },
+  "09361": {
+    "name": "Amberg",
+    "pricePerSqm": 2973
+  },
+  "09575": {
+    "name": "Neustadt a.d. Aisch-Bad Windsheim",
+    "pricePerSqm": 2956
+  },
+  "09376": {
+    "name": "Schwandorf",
+    "pricePerSqm": 2949
+  },
+  "09679": {
+    "name": "Würzburg",
+    "pricePerSqm": 2938
+  },
+  "09471": {
+    "name": "Bamberg",
+    "pricePerSqm": 2924
+  },
+  "09561": {
+    "name": "Ansbach",
+    "pricePerSqm": 2915
+  },
+  "09271": {
+    "name": "Deggendorf",
+    "pricePerSqm": 2858
+  },
+  "09577": {
+    "name": "Weißenburg-Gunzenhausen",
+    "pricePerSqm": 2815
+  },
+  "09676": {
+    "name": "Miltenberg",
+    "pricePerSqm": 2772
+  },
+  "09571": {
+    "name": "Ansbach",
+    "pricePerSqm": 2764
+  },
+  "09675": {
+    "name": "Kitzingen",
+    "pricePerSqm": 2728
+  },
+  "09275": {
+    "name": "Passau",
+    "pricePerSqm": 2690
+  },
+  "09678": {
+    "name": "Schweinfurt",
+    "pricePerSqm": 2596
+  },
+  "09662": {
+    "name": "Schweinfurt",
+    "pricePerSqm": 2564
+  },
+  "09277": {
+    "name": "Rottal-Inn",
+    "pricePerSqm": 2551
+  },
+  "09363": {
+    "name": "Weiden i.d. OPf.",
+    "pricePerSqm": 2508
+  },
+  "09677": {
+    "name": "Main-Spessart",
+    "pricePerSqm": 2482
+  },
+  "09371": {
+    "name": "Amberg-Sulzbach",
+    "pricePerSqm": 2396
+  },
+  "09473": {
+    "name": "Coburg",
+    "pricePerSqm": 2386
+  },
+  "09472": {
+    "name": "Bayreuth",
+    "pricePerSqm": 2374
+  },
+  "09374": {
+    "name": "Neustadt a.d. Waldnaab",
+    "pricePerSqm": 2363
+  },
+  "09463": {
+    "name": "Coburg",
+    "pricePerSqm": 2328
+  },
+  "09276": {
+    "name": "Regen",
+    "pricePerSqm": 2242
+  },
+  "09674": {
+    "name": "Haßberge",
+    "pricePerSqm": 2210
+  },
+  "09673": {
+    "name": "Rhön-Grabfeld",
+    "pricePerSqm": 2207
+  },
+  "09372": {
+    "name": "Cham",
+    "pricePerSqm": 2157
+  },
+  "09672": {
+    "name": "Bad Kissingen",
+    "pricePerSqm": 2132
+  },
+  "09477": {
+    "name": "Kulmbach",
+    "pricePerSqm": 2121
+  },
+  "09478": {
+    "name": "Lichtenfels",
+    "pricePerSqm": 2116
+  },
+  "09464": {
+    "name": "Hof",
+    "pricePerSqm": 2018
+  },
+  "09377": {
+    "name": "Tirschenreuth",
+    "pricePerSqm": 1931
+  },
+  "09475": {
+    "name": "Hof",
+    "pricePerSqm": 1897
+  },
+  "09272": {
+    "name": "Freyung-Grafenau",
+    "pricePerSqm": 1882
+  },
+  "09479": {
+    "name": "Wunsiedel i. Fichtelgebirge",
+    "pricePerSqm": 1860
+  },
+  "09476": {
+    "name": "Kronach",
+    "pricePerSqm": 1776
+  },
+  "04011": {
+    "name": "Bremen",
+    "pricePerSqm": 2506
+  },
+  "04012": {
+    "name": "Bremerhaven",
+    "pricePerSqm": 1772
+  },
+  "02000": {
+    "name": "Hamburg",
+    "pricePerSqm": 5155
+  },
+  "06412": {
+    "name": "Frankfurt am Main",
+    "pricePerSqm": 5344
+  },
+  "06436": {
+    "name": "Main-Taunus-Kreis",
+    "pricePerSqm": 4165
+  },
+  "06411": {
+    "name": "Darmstadt",
+    "pricePerSqm": 4023
+  },
+  "06414": {
+    "name": "Wiesbaden",
+    "pricePerSqm": 3991
+  },
+  "06434": {
+    "name": "Hochtaunuskreis",
+    "pricePerSqm": 3948
+  },
+  "06413": {
+    "name": "Offenbach am Main",
+    "pricePerSqm": 3872
+  },
+  "06433": {
+    "name": "Groß-Gerau",
+    "pricePerSqm": 3623
+  },
+  "06438": {
+    "name": "Offenbach",
+    "pricePerSqm": 3558
+  },
+  "06432": {
+    "name": "Darmstadt-Dieburg",
+    "pricePerSqm": 3453
+  },
+  "06435": {
+    "name": "Main-Kinzig-Kreis",
+    "pricePerSqm": 3211
+  },
+  "06431": {
+    "name": "Bergstraße",
+    "pricePerSqm": 3203
+  },
+  "06439": {
+    "name": "Rheingau-Taunus-Kreis",
+    "pricePerSqm": 3136
+  },
+  "06440": {
+    "name": "Wetteraukreis",
+    "pricePerSqm": 3113
+  },
+  "06531": {
+    "name": "Gießen",
+    "pricePerSqm": 3005
+  },
+  "06611": {
+    "name": "Kassel",
+    "pricePerSqm": 2763
+  },
+  "06534": {
+    "name": "Marburg-Biedenkopf",
+    "pricePerSqm": 2577
+  },
+  "06437": {
+    "name": "Odenwaldkreis",
+    "pricePerSqm": 2537
+  },
+  "06532": {
+    "name": "Lahn-Dill-Kreis",
+    "pricePerSqm": 2534
+  },
+  "06631": {
+    "name": "Fulda",
+    "pricePerSqm": 2496
+  },
+  "06633": {
+    "name": "Kassel",
+    "pricePerSqm": 2314
+  },
+  "06533": {
+    "name": "Limburg-Weilburg",
+    "pricePerSqm": 2282
+  },
+  "06632": {
+    "name": "Hersfeld-Rotenburg",
+    "pricePerSqm": 1961
+  },
+  "06634": {
+    "name": "Schwalm-Eder-Kreis",
+    "pricePerSqm": 1855
+  },
+  "06635": {
+    "name": "Waldeck-Frankenberg",
+    "pricePerSqm": 1779
+  },
+  "06535": {
+    "name": "Vogelsbergkreis",
+    "pricePerSqm": 1668
+  },
+  "06636": {
+    "name": "Werra-Meißner-Kreis",
+    "pricePerSqm": 1408
+  },
+  "03355": {
+    "name": "Lüneburg",
+    "pricePerSqm": 3356
+  },
+  "03452": {
+    "name": "Aurich",
+    "pricePerSqm": 3158
+  },
+  "03353": {
+    "name": "Harburg",
+    "pricePerSqm": 3082
+  },
+  "03458": {
+    "name": "Oldenburg",
+    "pricePerSqm": 2673
+  },
+  "03451": {
+    "name": "Ammerland",
+    "pricePerSqm": 2999
+  },
+  "03101": {
+    "name": "Braunschweig",
+    "pricePerSqm": 2853
+  },
+  "03404": {
+    "name": "Osnabrück",
+    "pricePerSqm": 2845
+  },
+  "03241": {
+    "name": "Region Hannover",
+    "pricePerSqm": 2832
+  },
+  "03359": {
+    "name": "Stade",
+    "pricePerSqm": 2768
+  },
+  "03460": {
+    "name": "Vechta",
+    "pricePerSqm": 2751
+  },
+  "03457": {
+    "name": "Leer",
+    "pricePerSqm": 2748
+  },
+  "03361": {
+    "name": "Verden",
+    "pricePerSqm": 2646
+  },
+  "03453": {
+    "name": "Cloppenburg",
+    "pricePerSqm": 2608
+  },
+  "03251": {
+    "name": "Diepholz",
+    "pricePerSqm": 2547
+  },
+  "03462": {
+    "name": "Wittmund",
+    "pricePerSqm": 2526
+  },
+  "03151": {
+    "name": "Gifhorn",
+    "pricePerSqm": 2475
+  },
+  "03456": {
+    "name": "Grafschaft Bentheim",
+    "pricePerSqm": 2455
+  },
+  "03356": {
+    "name": "Osterholz",
+    "pricePerSqm": 2442
+  },
+  "03459": {
+    "name": "Osnabrück",
+    "pricePerSqm": 2427
+  },
+  "03103": {
+    "name": "Wolfsburg",
+    "pricePerSqm": 2412
+  },
+  "03454": {
+    "name": "Emsland",
+    "pricePerSqm": 2375
+  },
+  "03455": {
+    "name": "Friesland",
+    "pricePerSqm": 2365
+  },
+  "03254": {
+    "name": "Hildesheim",
+    "pricePerSqm": 2348
+  },
+  "03357": {
+    "name": "Rotenburg (Wümme)",
+    "pricePerSqm": 2342
+  },
+  "03352": {
+    "name": "Cuxhaven",
+    "pricePerSqm": 2341
+  },
+  "03401": {
+    "name": "Delmenhorst",
+    "pricePerSqm": 2309
+  },
+  "03157": {
+    "name": "Peine",
+    "pricePerSqm": 2294
+  },
+  "03256": {
+    "name": "Nienburg (Weser)",
+    "pricePerSqm": 2263
+  },
+  "03159": {
+    "name": "Göttingen",
+    "pricePerSqm": 2206
+  },
+  "03461": {
+    "name": "Wesermarsch",
+    "pricePerSqm": 2138
+  },
+  "03405": {
+    "name": "Wilhelmshaven",
+    "pricePerSqm": 2070
+  },
+  "03257": {
+    "name": "Schaumburg",
+    "pricePerSqm": 2069
+  },
+  "03102": {
+    "name": "Salzgitter",
+    "pricePerSqm": 2061
+  },
+  "03360": {
+    "name": "Uelzen",
+    "pricePerSqm": 2058
+  },
+  "03158": {
+    "name": "Wolfenbüttel",
+    "pricePerSqm": 2031
+  },
+  "03351": {
+    "name": "Celle",
+    "pricePerSqm": 2021
+  },
+  "03155": {
+    "name": "Northeim",
+    "pricePerSqm": 1981
+  },
+  "03358": {
+    "name": "Heidekreis",
+    "pricePerSqm": 1967
+  },
+  "03402": {
+    "name": "Emden",
+    "pricePerSqm": 1944
+  },
+  "03154": {
+    "name": "Helmstedt",
+    "pricePerSqm": 1925
+  },
+  "03252": {
+    "name": "Hameln-Pyrmont",
+    "pricePerSqm": 1761
+  },
+  "03153": {
+    "name": "Goslar",
+    "pricePerSqm": 1618
+  },
+  "03354": {
+    "name": "Lüchow-Dannenberg",
+    "pricePerSqm": 1403
+  },
+  "03255": {
+    "name": "Holzminden",
+    "pricePerSqm": 1385
+  },
+  "05315": {
+    "name": "Köln",
+    "pricePerSqm": 4520
+  },
+  "05111": {
+    "name": "Düsseldorf",
+    "pricePerSqm": 4397
+  },
+  "05515": {
+    "name": "Münster",
+    "pricePerSqm": 4132
+  },
+  "05314": {
+    "name": "Bonn",
+    "pricePerSqm": 3696
+  },
+  "05382": {
+    "name": "Rhein-Sieg-Kreis",
+    "pricePerSqm": 3268
+  },
+  "05162": {
+    "name": "Rhein-Kreis Neuss",
+    "pricePerSqm": 3218
+  },
+  "05378": {
+    "name": "Rheinisch-Bergischer Kreis",
+    "pricePerSqm": 3184
+  },
+  "05158": {
+    "name": "Mettmann",
+    "pricePerSqm": 3139
+  },
+  "05316": {
+    "name": "Leverkusen",
+    "pricePerSqm": 3109
+  },
+  "05362": {
+    "name": "Rhein-Erft-Kreis",
+    "pricePerSqm": 3100
+  },
+  "05334": {
+    "name": "Städteregion Aachen",
+    "pricePerSqm": 2931
+  },
+  "05114": {
+    "name": "Krefeld",
+    "pricePerSqm": 2821
+  },
+  "05558": {
+    "name": "Coesfeld",
+    "pricePerSqm": 2802
+  },
+  "05711": {
+    "name": "Bielefeld",
+    "pricePerSqm": 2796
+  },
+  "05754": {
+    "name": "Gütersloh",
+    "pricePerSqm": 2795
+  },
+  "05774": {
+    "name": "Paderborn",
+    "pricePerSqm": 2777
+  },
+  "05166": {
+    "name": "Viersen",
+    "pricePerSqm": 2758
+  },
+  "05366": {
+    "name": "Euskirchen",
+    "pricePerSqm": 2698
+  },
+  "05554": {
+    "name": "Borken",
+    "pricePerSqm": 2694
+  },
+  "05122": {
+    "name": "Solingen",
+    "pricePerSqm": 2694
+  },
+  "05966": {
+    "name": "Olpe",
+    "pricePerSqm": 2689
+  },
+  "05117": {
+    "name": "Mülheim an der Ruhr",
+    "pricePerSqm": 2636
+  },
+  "05566": {
+    "name": "Steinfurt",
+    "pricePerSqm": 2631
+  },
+  "05913": {
+    "name": "Dortmund",
+    "pricePerSqm": 2628
+  },
+  "05170": {
+    "name": "Wesel",
+    "pricePerSqm": 2626
+  },
+  "05570": {
+    "name": "Warendorf",
+    "pricePerSqm": 2619
+  },
+  "05113": {
+    "name": "Essen",
+    "pricePerSqm": 2602
+  },
+  "05116": {
+    "name": "Mönchengladbach",
+    "pricePerSqm": 2496
+  },
+  "05954": {
+    "name": "Ennepe-Ruhr-Kreis",
+    "pricePerSqm": 2444
+  },
+  "05911": {
+    "name": "Bochum",
+    "pricePerSqm": 2440
+  },
+  "05974": {
+    "name": "Soest",
+    "pricePerSqm": 2432
+  },
+  "05154": {
+    "name": "Kleve",
+    "pricePerSqm": 2429
+  },
+  "05978": {
+    "name": "Unna",
+    "pricePerSqm": 2376
+  },
+  "05562": {
+    "name": "Recklinghausen",
+    "pricePerSqm": 2372
+  },
+  "05124": {
+    "name": "Wuppertal",
+    "pricePerSqm": 2371
+  },
+  "05119": {
+    "name": "Oberhausen",
+    "pricePerSqm": 2351
+  },
+  "05512": {
+    "name": "Bottrop",
+    "pricePerSqm": 2348
+  },
+  "05112": {
+    "name": "Duisburg",
+    "pricePerSqm": 2345
+  },
+  "05370": {
+    "name": "Heinsberg",
+    "pricePerSqm": 2344
+  },
+  "05358": {
+    "name": "Düren",
+    "pricePerSqm": 2311
+  },
+  "05374": {
+    "name": "Oberbergischer Kreis",
+    "pricePerSqm": 2268
+  },
+  "05970": {
+    "name": "Siegen-Wittgenstein",
+    "pricePerSqm": 2256
+  },
+  "05120": {
+    "name": "Remscheid",
+    "pricePerSqm": 2229
+  },
+  "05915": {
+    "name": "Hamm",
+    "pricePerSqm": 2226
+  },
+  "05914": {
+    "name": "Hagen",
+    "pricePerSqm": 2221
+  },
+  "05758": {
+    "name": "Herford",
+    "pricePerSqm": 2202
+  },
+  "05766": {
+    "name": "Lippe",
+    "pricePerSqm": 2114
+  },
+  "05770": {
+    "name": "Minden-Lübbecke",
+    "pricePerSqm": 2101
+  },
+  "05916": {
+    "name": "Herne",
+    "pricePerSqm": 2053
+  },
+  "05513": {
+    "name": "Gelsenkirchen",
+    "pricePerSqm": 1939
+  },
+  "05958": {
+    "name": "Hochsauerlandkreis",
+    "pricePerSqm": 1927
+  },
+  "05962": {
+    "name": "Märkischer Kreis",
+    "pricePerSqm": 1900
+  },
+  "05762": {
+    "name": "Höxter",
+    "pricePerSqm": 1806
+  },
+  "07315": {
+    "name": "Mainz",
+    "pricePerSqm": 4196
+  },
+  "07318": {
+    "name": "Speyer",
+    "pricePerSqm": 3390
+  },
+  "07334": {
+    "name": "Germersheim",
+    "pricePerSqm": 3128
+  },
+  "07211": {
+    "name": "Trier",
+    "pricePerSqm": 3093
+  },
+  "07332": {
+    "name": "Bad Dürkheim",
+    "pricePerSqm": 3089
+  },
+  "07235": {
+    "name": "Trier-Saarburg",
+    "pricePerSqm": 3075
+  },
+  "07338": {
+    "name": "Rhein-Pfalz-Kreis",
+    "pricePerSqm": 3044
+  },
+  "07339": {
+    "name": "Mainz-Bingen",
+    "pricePerSqm": 3021
+  },
+  "07313": {
+    "name": "Landau in der Pfalz",
+    "pricePerSqm": 2996
+  },
+  "07232": {
+    "name": "Eifelkreis Bitburg-Prüm",
+    "pricePerSqm": 2963
+  },
+  "07316": {
+    "name": "Neustadt an der Weinstraße",
+    "pricePerSqm": 2955
+  },
+  "07311": {
+    "name": "Frankenthal (Pfalz)",
+    "pricePerSqm": 2943
+  },
+  "07314": {
+    "name": "Ludwigshafen am Rhein",
+    "pricePerSqm": 2871
+  },
+  "07319": {
+    "name": "Worms",
+    "pricePerSqm": 2822
+  },
+  "07111": {
+    "name": "Koblenz",
+    "pricePerSqm": 2750
+  },
+  "07331": {
+    "name": "Alzey-Worms",
+    "pricePerSqm": 2735
+  },
+  "07337": {
+    "name": "Südliche Weinstraße",
+    "pricePerSqm": 2727
+  },
+  "07131": {
+    "name": "Ahrweiler",
+    "pricePerSqm": 2675
+  },
+  "07133": {
+    "name": "Bad Kreuznach",
+    "pricePerSqm": 2630
+  },
+  "07137": {
+    "name": "Mayen-Koblenz",
+    "pricePerSqm": 2586
+  },
+  "07231": {
+    "name": "Bernkastel-Wittlich",
+    "pricePerSqm": 2496
+  },
+  "07135": {
+    "name": "Cochem-Zell",
+    "pricePerSqm": 2466
+  },
+  "07138": {
+    "name": "Neuwied",
+    "pricePerSqm": 2456
+  },
+  "07312": {
+    "name": "Kaiserslautern",
+    "pricePerSqm": 2426
+  },
+  "07333": {
+    "name": "Donnersbergkreis",
+    "pricePerSqm": 2287
+  },
+  "07141": {
+    "name": "Rhein-Lahn-Kreis",
+    "pricePerSqm": 2198
+  },
+  "07140": {
+    "name": "Rhein-Hunsrück-Kreis",
+    "pricePerSqm": 2094
+  },
+  "07143": {
+    "name": "Westerwaldkreis",
+    "pricePerSqm": 2085
+  },
+  "07233": {
+    "name": "Vulkaneifel",
+    "pricePerSqm": 2060
+  },
+  "07320": {
+    "name": "Zweibrücken",
+    "pricePerSqm": 2010
+  },
+  "07335": {
+    "name": "Kaiserslautern",
+    "pricePerSqm": 1987
+  },
+  "07132": {
+    "name": "Altenkirchen (Westerwald)",
+    "pricePerSqm": 1928
+  },
+  "07336": {
+    "name": "Kusel",
+    "pricePerSqm": 1753
+  },
+  "07340": {
+    "name": "Südwestpfalz",
+    "pricePerSqm": 1735
+  },
+  "07317": {
+    "name": "Pirmasens",
+    "pricePerSqm": 1523
+  },
+  "07134": {
+    "name": "Birkenfeld",
+    "pricePerSqm": 1507
+  },
+  "01054": {
+    "name": "Nordfriesland",
+    "pricePerSqm": 6153
+  },
+  "01055": {
+    "name": "Ostholstein",
+    "pricePerSqm": 4176
+  },
+  "01003": {
+    "name": "Lübeck",
+    "pricePerSqm": 3521
+  },
+  "01062": {
+    "name": "Stormarn",
+    "pricePerSqm": 3413
+  },
+  "01056": {
+    "name": "Pinneberg",
+    "pricePerSqm": 3315
+  },
+  "01002": {
+    "name": "Kiel",
+    "pricePerSqm": 3277
+  },
+  "01057": {
+    "name": "Plön",
+    "pricePerSqm": 3212
+  },
+  "01060": {
+    "name": "Segeberg",
+    "pricePerSqm": 3020
+  },
+  "01053": {
+    "name": "Herzogtum Lauenburg",
+    "pricePerSqm": 3012
+  },
+  "01059": {
+    "name": "Schleswig-Flensburg",
+    "pricePerSqm": 2795
+  },
+  "01058": {
+    "name": "Rendsburg-Eckernförde",
+    "pricePerSqm": 2728
+  },
+  "01001": {
+    "name": "Flensburg",
+    "pricePerSqm": 2707
+  },
+  "01051": {
+    "name": "Dithmarschen",
+    "pricePerSqm": 2672
+  },
+  "01004": {
+    "name": "Neumünster",
+    "pricePerSqm": 2284
+  },
+  "01061": {
+    "name": "Steinburg",
+    "pricePerSqm": 2231
+  }
+}
