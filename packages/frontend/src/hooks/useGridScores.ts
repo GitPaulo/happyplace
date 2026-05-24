@@ -1,8 +1,8 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { CellScore, GridCell, SourceScore } from "@happyplace/shared";
 import type { SourceCategory } from "@happyplace/shared";
 import { generateGrid } from "@happyplace/shared";
-import { streamScores, type SourceStreamEvent, type AmenityPoint } from "../utils/api";
+import type { SourceStreamEvent } from "../scoring/engine";
 
 interface Bounds {
   north: number;
@@ -11,9 +11,17 @@ interface Bounds {
   west: number;
 }
 
+export interface AmenityPoint {
+  lat: number;
+  lng: number;
+  type: string;
+}
+
 export interface MapAmenityPoint extends AmenityPoint {
   sourceId: string;
 }
+
+let nextId = 0;
 
 export function useGridScores(weights: Record<string, number>, hasCar: boolean) {
   const [cells, setCells] = useState<CellScore[]>([]);
@@ -22,10 +30,20 @@ export function useGridScores(weights: Record<string, number>, hasCar: boolean) 
   >([]);
   const [loading, setLoading] = useState(false);
   const [amenityPoints, setAmenityPoints] = useState<MapAmenityPoint[]>([]);
-  const abortRef = useRef<AbortController | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accumRef = useRef<Map<string, SourceStreamEvent>>(new Map());
   const pointsAccumRef = useRef<MapAmenityPoint[]>([]);
+  const activeIdRef = useRef(-1);
+  const workerRef = useRef<Worker | null>(null);
+
+  useEffect(() => {
+    const worker = new Worker(
+      new URL("../scoring/worker.ts", import.meta.url),
+      { type: "module" },
+    );
+    workerRef.current = worker;
+    return () => worker.terminate();
+  }, []);
 
   const recompute = useCallback(
     (gridCells: GridCell[]) => {
@@ -42,7 +60,6 @@ export function useGridScores(weights: Record<string, number>, hasCar: boolean) 
           if (!cs) continue;
           let w = weights[sd.sourceId] ?? sd.weight;
           if (sd.weightMode === "penalty") {
-            // Full weight when score is low (bad), fades to 20% when score is high (good)
             w *= 1 - 0.8 * (cs.score / 100);
           }
           totalWeighted += cs.score * w;
@@ -75,10 +92,12 @@ export function useGridScores(weights: Record<string, number>, hasCar: boolean) 
     (bounds: Bounds) => {
       if (timerRef.current) clearTimeout(timerRef.current);
 
-      timerRef.current = setTimeout(async () => {
-        if (abortRef.current) abortRef.current.abort();
-        const controller = new AbortController();
-        abortRef.current = controller;
+      timerRef.current = setTimeout(() => {
+        const worker = workerRef.current;
+        if (!worker) return;
+
+        const id = ++nextId;
+        activeIdRef.current = id;
 
         accumRef.current = new Map();
         pointsAccumRef.current = [];
@@ -87,48 +106,54 @@ export function useGridScores(weights: Record<string, number>, hasCar: boolean) 
 
         const gridCells = generateGrid(bounds);
 
-        try {
-          await streamScores(
-            bounds,
-            weights,
-            hasCar,
-            (event) => {
-              accumRef.current.set(event.sourceId, event);
+        worker.onmessage = (e: MessageEvent) => {
+          if (e.data.id !== id) return;
 
-              if (event.points && event.points.length > 0) {
-                const tagged = event.points.map((p) => ({
-                  ...p,
-                  sourceId: event.sourceId,
-                }));
-                pointsAccumRef.current = [...pointsAccumRef.current, ...tagged];
-                setAmenityPoints([...pointsAccumRef.current]);
-              }
+          if (e.data.type === "source") {
+            const event = e.data.event as SourceStreamEvent;
+            accumRef.current.set(event.sourceId, event);
 
-              setSources((prev) => {
-                const has = prev.some((s) => s.id === event.sourceId);
-                if (has) return prev;
-                return [
-                  ...prev,
-                  {
-                    id: event.sourceId,
-                    name: event.sourceName,
-                    weight: event.weight,
-                    category: event.category,
-                  },
-                ];
-              });
+            if (event.points && event.points.length > 0) {
+              const tagged = event.points.map((p) => ({
+                ...p,
+                sourceId: event.sourceId,
+              }));
+              pointsAccumRef.current = [...pointsAccumRef.current, ...tagged];
+              setAmenityPoints([...pointsAccumRef.current]);
+            }
 
-              recompute(gridCells);
-            },
-            controller.signal,
-          );
-        } catch (e) {
-          if (!(e instanceof DOMException && e.name === "AbortError")) {
-            console.error("Failed to stream scores:", e);
+            setSources((prev) => {
+              const has = prev.some((s) => s.id === event.sourceId);
+              if (has) return prev;
+              return [
+                ...prev,
+                {
+                  id: event.sourceId,
+                  name: event.sourceName,
+                  weight: event.weight,
+                  category: event.category,
+                },
+              ];
+            });
+
+            recompute(gridCells);
           }
-        } finally {
-          setLoading(false);
-        }
+
+          if (e.data.type === "done" || e.data.type === "error") {
+            if (e.data.type === "error") {
+              console.error("Worker scoring error:", e.data.error);
+            }
+            setLoading(false);
+          }
+        };
+
+        worker.postMessage({
+          type: "compute",
+          id,
+          bounds,
+          weights,
+          ctx: { hasCar },
+        });
       }, 500);
     },
     [weights, hasCar, recompute],
