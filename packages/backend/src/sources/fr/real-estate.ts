@@ -22,38 +22,43 @@ export class RealEstateSource implements DataSource {
     const communeMap = new Map<string, CommuneInfo>();
     for (const c of communes) communeMap.set(c.code, c);
 
-    const codes = communes.map((c) => c.code).join(",");
-
-    const url = `${TABULAR_API}/${DVF_STATS_RESOURCE_ID}/data/?page_size=${communes.length + 5}&code_geo__in=${codes}&echelle_geo__exact=commune`;
-    const json = await resilientJson<any>(url, {
-      label: "[realestate]",
-      timeoutMs: 20000,
-      maxRetries: 3,
-    });
-    if (!json) return [];
-    const rows = json.data ?? [];
-
     const results: DataPoint[] = [];
-    for (const row of rows) {
-      const code = row.code_geo as string;
-      const commune = communeMap.get(code);
-      if (!commune) continue;
+    const BATCH_SIZE = 40;
 
-      const medianApt = row.med_prix_m2_whole_appartement as number | null;
-      const medianHouse = row.med_prix_m2_whole_maison as number | null;
-      const medianAll = row.med_prix_m2_whole_apt_maison as number | null;
-      const nbSales = row.nb_ventes_whole_apt_maison as number | null;
+    for (let i = 0; i < communes.length; i += BATCH_SIZE) {
+      const batch = communes.slice(i, i + BATCH_SIZE);
+      const codes = batch.map((c) => c.code).join(",");
 
-      const pricePerSqm = medianApt ?? medianAll ?? medianHouse;
-      if (pricePerSqm == null) continue;
-
-      console.log(`[realestate] ${code} ${commune.name}: ${pricePerSqm} EUR/m² (${nbSales ?? "?"} sales)`);
-      results.push({
-        lat: commune.lat,
-        lng: commune.lng,
-        type: "property",
-        metadata: { pricePerSqm, nbSales: nbSales ?? 0, label: commune.name },
+      const url = `${TABULAR_API}/${DVF_STATS_RESOURCE_ID}/data/?page_size=${batch.length + 5}&code_geo__in=${codes}&echelle_geo__exact=commune`;
+      const json = await resilientJson<any>(url, {
+        label: "[realestate]",
+        timeoutMs: 20000,
+        maxRetries: 3,
       });
+      if (!json) continue;
+      const rows = json.data ?? [];
+
+      for (const row of rows) {
+        const code = row.code_geo as string;
+        const commune = communeMap.get(code);
+        if (!commune) continue;
+
+        const medianApt = row.med_prix_m2_whole_appartement as number | null;
+        const medianHouse = row.med_prix_m2_whole_maison as number | null;
+        const medianAll = row.med_prix_m2_whole_apt_maison as number | null;
+        const nbSales = row.nb_ventes_whole_apt_maison as number | null;
+
+        const pricePerSqm = medianApt ?? medianAll ?? medianHouse;
+        if (pricePerSqm == null) continue;
+
+        console.log(`[realestate] ${code} ${commune.name}: ${pricePerSqm} EUR/m² (${nbSales ?? "?"} sales)`);
+        results.push({
+          lat: commune.lat,
+          lng: commune.lng,
+          type: "property",
+          metadata: { pricePerSqm, nbSales: nbSales ?? 0, label: commune.name },
+        });
+      }
     }
 
     return results;

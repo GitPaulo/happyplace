@@ -147,25 +147,12 @@ class ScoringEngine {
       try {
         const fetched = await source.fetchData(merged);
 
-        const tilePoints = new Map<string, DataPoint[]>();
+        // For sources with sparse area-level data (e.g. commune-level prices),
+        // points cluster at centroids and most tiles end up empty. Store all
+        // fetched points in every tile so empty tiles don't block future fetches.
+        // scoreCell already handles distance-based relevance.
         for (const tile of missingTiles) {
-          tilePoints.set(tile.key, []);
-        }
-
-        for (const point of fetched) {
-          for (const tile of missingTiles) {
-            const b = tile.bounds;
-            if (point.lat >= b.south && point.lat < b.north &&
-                point.lng >= b.west && point.lng < b.east) {
-              tilePoints.get(tile.key)!.push(point);
-              break;
-            }
-          }
-        }
-
-        for (const tile of missingTiles) {
-          const pts = tilePoints.get(tile.key)!;
-          setCachedTile(tile.key, source.id, pts);
+          setCachedTile(tile.key, source.id, fetched);
         }
 
         allPoints.push(...fetched);
