@@ -11,6 +11,7 @@ export interface SourceStreamEvent {
   sourceName: string;
   category: SourceCategory;
   weight: number;
+  weightMode?: "default" | "penalty";
   cells: Record<string, { score: number; details: string; hasData: boolean }>;
   points?: AmenityPoint[];
 }

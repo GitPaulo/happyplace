@@ -24,6 +24,7 @@ export interface SourceStreamEvent {
   sourceName: string;
   category: SourceCategory;
   weight: number;
+  weightMode?: "default" | "penalty";
   cells: Record<string, { score: number; details: string; hasData: boolean }>;
   points?: { lat: number; lng: number; type: string }[];
 }
@@ -91,6 +92,7 @@ class ScoringEngine {
           sourceName: source.name,
           category: source.category,
           weight,
+          weightMode: source.weightMode ?? "default",
           cells: cellResults,
         };
 

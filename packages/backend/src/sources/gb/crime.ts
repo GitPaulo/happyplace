@@ -27,6 +27,7 @@ export class CrimeSource implements DataSource {
   defaultWeight = 25;
   category = "safety" as const;
   country = "GB" as const;
+  weightMode = "penalty" as const;
 
   async fetchData(bounds: BoundingBox): Promise<DataPoint[]> {
     const postcodes = await getPostcodesForBounds(bounds);

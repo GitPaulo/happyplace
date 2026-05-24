@@ -40,7 +40,11 @@ export function useGridScores(weights: Record<string, number>, hasCar: boolean) 
         for (const sd of accum.values()) {
           const cs = sd.cells[cell.id];
           if (!cs) continue;
-          const w = weights[sd.sourceId] ?? sd.weight;
+          let w = weights[sd.sourceId] ?? sd.weight;
+          if (sd.weightMode === "penalty") {
+            // Full weight when score is low (bad), fades to 20% when score is high (good)
+            w *= 1 - 0.8 * (cs.score / 100);
+          }
           totalWeighted += cs.score * w;
           totalWeight += w;
           breakdown.push({

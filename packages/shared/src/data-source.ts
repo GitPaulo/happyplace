@@ -14,6 +14,8 @@ export interface DataSource {
   category: SourceCategory;
   /** ISO country code (e.g. "FR", "GB"). Omit for global sources (OSM/Overpass). */
   country?: string;
+  /** "penalty" = full weight when score is low (bad), fades when score is high (good). */
+  weightMode?: "default" | "penalty";
 
   fetchData(bounds: BoundingBox): Promise<DataPoint[]>;
 

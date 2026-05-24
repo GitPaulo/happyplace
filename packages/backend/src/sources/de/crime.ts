@@ -11,6 +11,7 @@ export class CrimeSource implements DataSource {
   defaultWeight = 4;
   category = "safety" as const;
   country = "DE" as const;
+  weightMode = "penalty" as const;
 
   async fetchData(bounds: BoundingBox): Promise<DataPoint[]> {
     const kreise = await getKreiseForBounds(bounds);
