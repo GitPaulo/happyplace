@@ -66,7 +66,7 @@ function scoreRealEstateCell(cell: GridCell, data: DataPoint[], country: string)
   let nearestLabel = "";
   let weightedPriceSum = 0;
   let weightSum = 0;
-  const searchRadius = country === "GB" ? 10 : 5;
+  const searchRadius = country === "GB" || country === "CA" ? 10 : 5;
 
   for (const point of data) {
     const d = distanceKm(cell.centerLat, cell.centerLng, point.lat, point.lng);
@@ -93,7 +93,8 @@ function scoreRealEstateCell(cell: GridCell, data: DataPoint[], country: string)
     100 * Math.exp(-avgPrice / 6000),
   )));
 
-  const currency = country === "GB" ? "GBP" : "EUR";
+  const currencyMap: Record<string, string> = { GB: "GBP", US: "USD", CA: "CAD" };
+  const currency = currencyMap[country] ?? "EUR";
   const details = `~${Math.round(avgPrice).toLocaleString()} ${currency}/m² (${nearestLabel || "area"})`;
   return { score, details };
 }
@@ -119,3 +120,5 @@ function makeRealEstateSource(country: string, description: string, weight: numb
 export const FrRealEstateSource = makeRealEstateSource("FR", "Median prices from DVF open data", 5);
 export const GbRealEstateSource = makeRealEstateSource("GB", "Average prices from UK HPI", 5);
 export const DeRealEstateSource = makeRealEstateSource("DE", "Prices from empirica-regio / Von Poll (2024)", 3.5);
+export const UsRealEstateSource = makeRealEstateSource("US", "Home values from Zillow ZHVI", 5);
+export const CaRealEstateSource = makeRealEstateSource("CA", "Average dwelling values from Census 2021", 5);

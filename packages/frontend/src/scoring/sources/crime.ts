@@ -113,3 +113,5 @@ function makeCrimeSource(country: string, description: string, weight: number): 
 export const FrCrimeSource = makeCrimeSource("FR", "Crime rates from French Ministry of Interior (SSMSI)", 25);
 export const GbCrimeSource = makeCrimeSource("GB", "Crime rates from data.police.uk (per 1000 inhabitants)", 25);
 export const DeCrimeSource = makeCrimeSource("DE", "Crime rates from BKA PKS (per 100k inhabitants)", 4);
+export const UsCrimeSource = makeCrimeSource("US", "Crime rates from FBI UCR (per 1000 inhabitants)", 4);
+export const CaCrimeSource = makeCrimeSource("CA", "Crime Severity Index from Statistics Canada", 4);

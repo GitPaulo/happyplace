@@ -4,3 +4,4 @@ packages/backend/data/
 *.db
 *.db-wal
 *.db-shm
+.env

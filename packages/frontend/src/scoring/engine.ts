@@ -7,9 +7,9 @@ import { getTilesForBounds, getCachedTile, setCachedTile, type Tile } from "./ca
 import { GrocerySource, TransportSource, EducationSource } from "./sources/amenities";
 import { HospitalSource, PharmacySource, DoctorSource } from "./sources/health";
 import { PoliceSource } from "./sources/police";
-import { FrCrimeSource, GbCrimeSource, DeCrimeSource } from "./sources/crime";
-import { FrRealEstateSource, GbRealEstateSource, DeRealEstateSource } from "./sources/realestate";
-import { FrPopulationSource, GbPopulationSource, DePopulationSource } from "./sources/population";
+import { FrCrimeSource, GbCrimeSource, DeCrimeSource, UsCrimeSource, CaCrimeSource } from "./sources/crime";
+import { FrRealEstateSource, GbRealEstateSource, DeRealEstateSource, UsRealEstateSource, CaRealEstateSource } from "./sources/realestate";
+import { FrPopulationSource, GbPopulationSource, DePopulationSource, UsPopulationSource, CaPopulationSource } from "./sources/population";
 
 export interface SourceStreamEvent {
   sourceId: string;
@@ -160,3 +160,9 @@ scoringEngine.register(DeRealEstateSource);
 scoringEngine.register(FrPopulationSource);
 scoringEngine.register(GbPopulationSource);
 scoringEngine.register(DePopulationSource);
+scoringEngine.register(UsCrimeSource);
+scoringEngine.register(CaCrimeSource);
+scoringEngine.register(UsRealEstateSource);
+scoringEngine.register(CaRealEstateSource);
+scoringEngine.register(UsPopulationSource);
+scoringEngine.register(CaPopulationSource);

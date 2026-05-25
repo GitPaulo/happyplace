@@ -33,6 +33,17 @@ jobs:
         run: npx tsx scripts/fetch-de.ts
         continue-on-error: true
 
+      - name: Fetch US data
+        run: npx tsx scripts/fetch-us.ts
+        env:
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          FBI_API_KEY: ${{ secrets.FBI_API_KEY }}
+        continue-on-error: true
+
+      - name: Fetch CA data
+        run: npx tsx scripts/fetch-ca.ts
+        continue-on-error: true
+
       - name: Summary
         run: |
           echo "=== Data files ==="

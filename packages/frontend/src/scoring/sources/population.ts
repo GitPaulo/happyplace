@@ -166,3 +166,5 @@ function makePopulationSource(country: string, description: string): DataSource 
 export const FrPopulationSource = makePopulationSource("FR", "Population density from INSEE commune data");
 export const GbPopulationSource = makePopulationSource("GB", "Population density from ONS Census 2021");
 export const DePopulationSource = makePopulationSource("DE", "Population density from Gemeindeverzeichnis");
+export const UsPopulationSource = makePopulationSource("US", "Population density from US Census ACS");
+export const CaPopulationSource = makePopulationSource("CA", "Population density from Statistics Canada Census");
