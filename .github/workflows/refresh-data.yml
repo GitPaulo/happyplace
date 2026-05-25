@@ -1,0 +1,50 @@
+name: Refresh Static Data
+
+on:
+  schedule:
+    - cron: "0 4 * * 1" # Weekly Monday 4 AM UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch FR data
+        run: npx tsx scripts/fetch-fr.ts
+        continue-on-error: true
+
+      - name: Fetch GB data
+        run: npx tsx scripts/fetch-gb.ts
+        continue-on-error: true
+
+      - name: Fetch DE data
+        run: npx tsx scripts/fetch-de.ts
+        continue-on-error: true
+
+      - name: Summary
+        run: |
+          echo "=== Data files ==="
+          find packages/frontend/public/data -type f -name '*.json' | sort
+          echo "=== Sizes ==="
+          du -sh packages/frontend/public/data/*/
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add packages/frontend/public/data/
+          git diff --cached --quiet && echo "No data changes" && exit 0
+          git commit -m "chore: refresh static data"
+          git push
