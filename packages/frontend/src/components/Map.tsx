@@ -13,11 +13,11 @@ export interface MapHandle {
 
 interface MapProps {
   onCellClick: (cell: CellScore) => void;
-  onLoadingChange: (loading: boolean) => void;
   onSourcesChange: (sources: ScoresResponse["sources"]) => void;
   weights: Record<string, number>;
   hasCar: boolean;
   panelOpen: boolean;
+  initialCenter?: { lat: number; lng: number };
 }
 
 function cellHasPartialData(cellScore: CellScore): boolean {
@@ -74,7 +74,7 @@ function injectShimmerDefs(map: L.Map) {
 
 const PANEL_WIDTH = 360;
 
-export const Map = forwardRef<MapHandle, MapProps>(function Map({ onCellClick, onLoadingChange, onSourcesChange, weights, hasCar, panelOpen }, ref) {
+export const Map = forwardRef<MapHandle, MapProps>(function Map({ onCellClick, onSourcesChange, weights, hasCar, panelOpen, initialCenter }, ref) {
   const mapRef = useRef<L.Map | null>(null);
   const gridLayerRef = useRef<L.LayerGroup | null>(null);
   const scoreLayerRef = useRef<L.LayerGroup | null>(null);
@@ -91,13 +91,17 @@ export const Map = forwardRef<MapHandle, MapProps>(function Map({ onCellClick, o
 
   useImperativeHandle(ref, () => ({
     flyTo(lat: number, lng: number) {
-      mapRef.current?.flyTo([lat, lng], 14, { duration: 1.5 });
+      const map = mapRef.current;
+      if (!map) return;
+      const center = map.getCenter();
+      const dist = Math.abs(center.lat - lat) + Math.abs(center.lng - lng);
+      if (dist > 5) {
+        map.setView([lat, lng], 14);
+      } else {
+        map.flyTo([lat, lng], 14, { duration: 1.2 });
+      }
     },
   }));
-
-  useEffect(() => {
-    onLoadingChange(loading);
-  }, [loading, onLoadingChange]);
 
   useEffect(() => {
     if (sources.length > 0) onSourcesChange(sources);
@@ -187,9 +191,11 @@ export const Map = forwardRef<MapHandle, MapProps>(function Map({ onCellClick, o
   useEffect(() => {
     if (mapRef.current) return;
 
+    const center = initialCenter ?? { lat: 48.8566, lng: 2.3522 };
     const map = L.map("map", {
-      center: [48.8566, 2.3522],
-      zoom: 12,
+      center: [center.lat, center.lng],
+      zoom: 14,
+      minZoom: 14,
       zoomControl: false,
     });
 

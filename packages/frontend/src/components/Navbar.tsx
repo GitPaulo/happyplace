@@ -30,7 +30,7 @@ export function Navbar({ sources, weights, onWeightsChange, hasCar, onHasCarChan
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
+      <div className="navbar-brand" onClick={() => window.location.reload()} style={{ cursor: "pointer" }}>
         happyplace
       </div>
 

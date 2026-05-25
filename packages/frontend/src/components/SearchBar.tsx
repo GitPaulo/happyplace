@@ -9,10 +9,12 @@ interface SearchResult {
 
 interface SearchBarProps {
   onNavigate: (lat: number, lng: number) => void;
+  placeholder?: string;
+  autoFocus?: boolean;
 }
 
-export function SearchBar({ onNavigate }: SearchBarProps) {
-  const [query, setQuery] = useState("Paris, France");
+export function SearchBar({ onNavigate, placeholder, autoFocus }: SearchBarProps) {
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [open, setOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(-1);
@@ -100,12 +102,13 @@ export function SearchBar({ onNavigate }: SearchBarProps) {
           ref={inputRef}
           className="search-input"
           type="text"
-          placeholder="search location..."
+          placeholder={placeholder ?? "search location..."}
           value={query}
           onChange={(e) => handleInput(e.target.value)}
           onFocus={() => { if (results.length > 0) setOpen(true); }}
           onKeyDown={handleKeyDown}
           spellCheck={false}
+          autoFocus={autoFocus}
         />
         <button className="search-btn" onClick={triggerSearch} title="Search">
           {"\u2192"}
