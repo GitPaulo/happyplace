@@ -37,7 +37,10 @@ export async function fetchWithRetry(
 ): Promise<ArrayBuffer> {
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
-      const res = await fetch(url, { headers: HEADERS });
+      const res = await fetch(url, {
+        headers: HEADERS,
+        signal: AbortSignal.timeout(120_000),
+      });
       if (res.status === 429 || res.status >= 500) {
         throw new Error(`HTTP ${res.status}`);
       }
