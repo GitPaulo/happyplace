@@ -9,40 +9,89 @@ permissions:
   contents: write
 
 jobs:
-  refresh:
+  fetch:
+    name: Fetch ${{ matrix.country }} data
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    continue-on-error: true
 
-      - uses: actions/setup-node@v4
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - country: FR
+            script: scripts/fetch-fr.ts
+            data_dir: fr
+            artifact: data-fr
+          - country: GB
+            script: scripts/fetch-gb.ts
+            data_dir: gb
+            artifact: data-gb
+          - country: DE
+            script: scripts/fetch-de.ts
+            data_dir: de
+            artifact: data-de
+          - country: US
+            script: scripts/fetch-us.ts
+            data_dir: us
+            artifact: data-us
+          - country: CA
+            script: scripts/fetch-ca.ts
+            data_dir: ca
+            artifact: data-ca
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
 
       - run: npm ci
 
-      - name: Fetch FR data
-        run: npx tsx scripts/fetch-fr.ts
-        continue-on-error: true
-
-      - name: Fetch GB data
-        run: npx tsx scripts/fetch-gb.ts
-        continue-on-error: true
-
-      - name: Fetch DE data
-        run: npx tsx scripts/fetch-de.ts
-        continue-on-error: true
-
-      - name: Fetch US data
-        run: npx tsx scripts/fetch-us.ts
+      - name: Fetch ${{ matrix.country }} data
+        run: npx tsx ${{ matrix.script }}
         env:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
           FBI_API_KEY: ${{ secrets.FBI_API_KEY }}
-        continue-on-error: true
 
-      - name: Fetch CA data
-        run: npx tsx scripts/fetch-ca.ts
-        continue-on-error: true
+      - name: Package ${{ matrix.country }} data
+        if: ${{ always() }}
+        run: |
+          if [ -d "packages/frontend/public/data/${{ matrix.data_dir }}" ]; then
+            tar -cf "${{ matrix.artifact }}.tar" "packages/frontend/public/data/${{ matrix.data_dir }}"
+          else
+            echo "No data directory found for ${{ matrix.country }}"
+          fi
+
+      - name: Upload ${{ matrix.country }} data
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}.tar
+          if-no-files-found: ignore
+          compression-level: 0
+
+  merge_and_commit:
+    name: Merge and commit updated data
+    runs-on: ubuntu-latest
+    needs: fetch
+    if: ${{ always() }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download generated data
+        uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          pattern: data-*
+          merge-multiple: true
+
+      - name: Extract generated data
+        run: |
+          find artifacts -type f -name 'data-*.tar' -print -exec tar -xf {} \;
 
       - name: Summary
         run: |
@@ -55,7 +104,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add packages/frontend/public/data/
-          git diff --cached --quiet && echo "No data changes" && exit 0
+
+          if git diff --cached --quiet; then
+            echo "No data changes"
+            exit 0
+          fi
+
           git commit -m "chore: refresh static data"
-          git push
+          git push origin "HEAD:${GITHUB_REF_NAME}"
