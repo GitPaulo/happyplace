@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import * as XLSX from "xlsx";
+import { fetchWithRetry, writeOutputFiles } from "./helpers.js";
 
 const OUT_DIR = path.resolve(
   import.meta.dirname,
@@ -19,33 +20,6 @@ const REALESTATE_PATH = path.resolve(
 
 const CRIME_XLSX_URL =
   "https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/PolizeilicheKriminalstatistik/2024/Kreis/Faelle/KR-F-01-T01-Kreise-Faelle-HZ_xls.xlsx?__blob=publicationFile&v=4";
-
-const HEADERS = { "User-Agent": "HappyPlace/1.0 (data-gen)" };
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-async function fetchWithRetry(
-  url: string,
-  maxRetries = 3
-): Promise<Response> {
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    try {
-      const res = await fetch(url, { headers: HEADERS });
-      if (res.status === 429 || res.status >= 500) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-      return res;
-    } catch (err) {
-      if (attempt === maxRetries) throw err;
-      console.log(`  Retry ${attempt + 1}/${maxRetries} in 5s…`);
-      await new Promise((r) => setTimeout(r, 5000));
-    }
-  }
-  throw new Error("unreachable");
-}
 
 // ---------------------------------------------------------------------------
 // Types
@@ -71,8 +45,7 @@ async function fetchCrimeData(
   kreise: Record<string, KreisInfo>
 ): Promise<Record<string, { name: string; lat: number; lng: number; hz: number }>> {
   console.log("Downloading BKA PKS 2024 XLSX…");
-  const res = await fetchWithRetry(CRIME_XLSX_URL);
-  const buffer = await res.arrayBuffer();
+  const buffer = await fetchWithRetry(CRIME_XLSX_URL);
   console.log(`  Downloaded ${(buffer.byteLength / 1024 / 1024).toFixed(1)} MB`);
 
   const workbook = XLSX.read(buffer, { type: "array" });
@@ -161,23 +134,13 @@ async function main() {
   const realEstateData = buildRealEstateData(kreise);
   console.log(`  ${Object.keys(realEstateData).length} Kreise with real estate data`);
 
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-
   const files: [string, object][] = [
     ["crime.json", crimeData],
     ["realestate.json", realEstateData],
     ["kreise.json", kreise],
   ];
 
-  console.log("\nWriting output files…");
-  for (const [name, data] of files) {
-    const filePath = path.join(OUT_DIR, name);
-    const json = JSON.stringify(data);
-    fs.writeFileSync(filePath, json);
-    const entries = Object.keys(data).length;
-    const sizeKb = (Buffer.byteLength(json) / 1024).toFixed(1);
-    console.log(`  ${name}: ${entries} entries (${sizeKb} KB)`);
-  }
+  writeOutputFiles(OUT_DIR, files);
 
   console.log("\nDone!");
 }

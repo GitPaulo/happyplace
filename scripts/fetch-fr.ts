@@ -1,12 +1,10 @@
-import fs from "node:fs";
 import path from "node:path";
+import { fetchJson, writeOutputFiles } from "./helpers.js";
 
 const OUT_DIR = path.resolve(
   import.meta.dirname,
   "../packages/frontend/public/data/fr"
 );
-
-const HEADERS = { "User-Agent": "HappyPlace/1.0 (data-gen)" };
 
 const CRIME_INDICATORS = [
   "Vols violents sans arme",
@@ -22,33 +20,6 @@ const CRIME_INDICATORS = [
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-async function fetchWithRetry(
-  url: string,
-  maxRetries = 5
-): Promise<Response> {
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    try {
-      const res = await fetch(url, { headers: HEADERS });
-      if (res.status === 429 || res.status >= 500) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-      return res;
-    } catch (err) {
-      if (attempt === maxRetries) throw err;
-      const delay = Math.min(1000 * 2 ** attempt, 30_000);
-      console.log(`  Retry ${attempt + 1}/${maxRetries} in ${delay}ms…`);
-      await new Promise((r) => setTimeout(r, delay));
-    }
-  }
-  throw new Error("unreachable");
-}
-
-async function fetchJson<T = any>(url: string): Promise<T> {
-  const res = await fetchWithRetry(url);
-  return res.json() as Promise<T>;
-}
 
 /**
  * Paginate through all pages of a tabular-api.data.gouv.fr resource.
@@ -276,23 +247,13 @@ async function main() {
 
   const populationData = buildPopulation(communes);
 
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-
   const files: [string, object][] = [
     ["crime.json", crimeData],
     ["realestate.json", realEstateData],
     ["population.json", populationData],
   ];
 
-  console.log("\nWriting output files…");
-  for (const [name, data] of files) {
-    const filePath = path.join(OUT_DIR, name);
-    const json = JSON.stringify(data);
-    fs.writeFileSync(filePath, json);
-    const entries = Object.keys(data).length;
-    const sizeKb = (Buffer.byteLength(json) / 1024).toFixed(1);
-    console.log(`  ${name}: ${entries} entries (${sizeKb} KB)`);
-  }
+  writeOutputFiles(OUT_DIR, files);
 
   console.log("\nDone!");
 }

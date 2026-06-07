@@ -8,6 +8,7 @@
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { sleep } from "./helpers.js";
 
 const OUT_DIR = resolve(import.meta.dirname ?? ".", "../packages/frontend/public/data/gb");
 const USER_AGENT = "HappyPlace/1.0 (data-gen)";
@@ -15,10 +16,6 @@ const USER_AGENT = "HappyPlace/1.0 (data-gen)";
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
 
 async function fetchJson<T>(url: string, retries = 3, delayMs = 2000): Promise<T | null> {
   for (let attempt = 0; attempt <= retries; attempt++) {

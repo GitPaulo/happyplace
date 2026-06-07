@@ -1,21 +1,19 @@
-import fs from "node:fs";
 import path from "node:path";
+import {
+  loadEnv,
+  fetchJson,
+  fetchText,
+  parseCsvLine,
+  writeOutputFiles,
+} from "./helpers.js";
 
-// Load .env from project root
-const envPath = path.resolve(import.meta.dirname, "../.env");
-if (fs.existsSync(envPath)) {
-  for (const line of fs.readFileSync(envPath, "utf-8").split("\n")) {
-    const m = line.match(/^\s*([^#=]+?)\s*=\s*(.*?)\s*$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
-  }
-}
+loadEnv();
 
 const OUT_DIR = path.resolve(
   import.meta.dirname,
   "../packages/frontend/public/data/us"
 );
 
-const HEADERS = { "User-Agent": "HappyPlace/1.0 (data-gen)" };
 const CENSUS_API_KEY = process.env.CENSUS_API_KEY ?? "";
 
 const TIGERWEB_BASE =
@@ -41,57 +39,6 @@ const STATE_CRIME_RATES: Record<string, number> = {
   PR: 12.1,
 };
 
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
-
-async function fetchWithRetry(
-  url: string,
-  maxRetries = 3,
-): Promise<Response> {
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    try {
-      const res = await fetch(url, {
-        headers: HEADERS,
-        signal: AbortSignal.timeout(120_000),
-      });
-      if (res.status === 429 || res.status >= 500) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-      return res;
-    } catch (err) {
-      if (attempt === maxRetries) throw err;
-      const delay = Math.min(2000 * 2 ** attempt, 30_000);
-      console.log(`  Retry ${attempt + 1}/${maxRetries} in ${delay}ms…`);
-      await sleep(delay);
-    }
-  }
-  throw new Error("unreachable");
-}
-
-function parseCsvLine(line: string): string[] {
-  const result: string[] = [];
-  let current = "";
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      inQuotes = !inQuotes;
-    } else if (ch === "," && !inQuotes) {
-      result.push(current);
-      current = "";
-    } else {
-      current += ch;
-    }
-  }
-  result.push(current);
-  return result;
-}
 
 // ---------------------------------------------------------------------------
 // Types
@@ -133,10 +80,9 @@ async function loadZctaData(): Promise<Map<string, ZctaInfo>> {
   console.log("Loading ZCTA data from TIGERweb…");
 
   const url = `${TIGERWEB_BASE}/2/query?where=1%3D1&outFields=ZCTA5,INTPTLAT,INTPTLON,AREALAND&returnGeometry=false&f=json&resultRecordCount=100000`;
-  const res = await fetchWithRetry(url);
-  const data = await res.json() as {
+  const data = await fetchJson<{
     features: { attributes: { ZCTA5: string; INTPTLAT: string; INTPTLON: string; AREALAND: string } }[];
-  };
+  }>(url);
 
   const map = new Map<string, ZctaInfo>();
   for (const f of data.features ?? []) {
@@ -156,10 +102,9 @@ async function loadCountyData(): Promise<Map<string, CountyInfo>> {
   console.log("Loading county data from TIGERweb…");
 
   const url = `${TIGERWEB_BASE}/82/query?where=1%3D1&outFields=GEOID,STATE,NAME,INTPTLAT,INTPTLON&returnGeometry=false&f=json&resultRecordCount=100000`;
-  const res = await fetchWithRetry(url);
-  const data = await res.json() as {
+  const data = await fetchJson<{
     features: { attributes: { GEOID: string; STATE: string; NAME: string; INTPTLAT: string; INTPTLON: string } }[];
-  };
+  }>(url);
 
   const map = new Map<string, CountyInfo>();
   for (const f of data.features ?? []) {
@@ -185,8 +130,7 @@ async function fetchRealEstateData(
   Record<string, { name: string; lat: number; lng: number; pricePerSqm: number }>
 > {
   console.log("Downloading Zillow ZHVI CSV…");
-  const res = await fetchWithRetry(ZILLOW_ZHVI_URL);
-  const csv = await res.text();
+  const csv = await fetchText(ZILLOW_ZHVI_URL);
   console.log(
     `  Downloaded ${(csv.length / 1024 / 1024).toFixed(1)} MB CSV`,
   );
@@ -265,8 +209,7 @@ async function fetchPopulationData(
     try {
       const url = `https://api.census.gov/data/${year}/acs/acs5?get=NAME,B01003_001E&for=zip%20code%20tabulation%20area:*&key=${CENSUS_API_KEY}`;
       console.log(`  Trying ACS ${year}…`);
-      const res = await fetchWithRetry(url);
-      data = (await res.json()) as string[][];
+      data = await fetchJson<string[][]>(url);
       console.log(`  Got ${data.length - 1} rows from ACS ${year}`);
       break;
     } catch (err) {
@@ -355,23 +298,13 @@ async function main() {
     fetchPopulationData(zctas),
   ]);
 
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-
   const files: [string, object][] = [
     ["crime.json", crimeData],
     ["realestate.json", realEstateData],
     ["population.json", populationData],
   ];
 
-  console.log("\nWriting output files…");
-  for (const [name, data] of files) {
-    const filePath = path.join(OUT_DIR, name);
-    const json = JSON.stringify(data);
-    fs.writeFileSync(filePath, json);
-    const entries = Object.keys(data).length;
-    const sizeKb = (Buffer.byteLength(json) / 1024).toFixed(1);
-    console.log(`  ${name}: ${entries} entries (${sizeKb} KB)`);
-  }
+  writeOutputFiles(OUT_DIR, files);
 
   console.log("\nDone!");
 }

@@ -1,98 +1,24 @@
 import fs from "node:fs";
 import path from "node:path";
-import { execSync } from "node:child_process";
-import os from "node:os";
+import {
+  loadEnv,
+  sleep,
+  fetchWithRetry,
+  fetchJson,
+  downloadAndExtractZip,
+  parseCsvLine,
+  writeOutputFiles,
+} from "./helpers.js";
 
-// Load .env from project root
-const envPath = path.resolve(import.meta.dirname, "../.env");
-if (fs.existsSync(envPath)) {
-  for (const line of fs.readFileSync(envPath, "utf-8").split("\n")) {
-    const m = line.match(/^\s*([^#=]+?)\s*=\s*(.*?)\s*$/);
-    if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
-  }
-}
+loadEnv();
 
 const OUT_DIR = path.resolve(
   import.meta.dirname,
   "../packages/frontend/public/data/ca"
 );
 
-const HEADERS = { "User-Agent": "HappyPlace/1.0 (data-gen)" };
-
 const CRIME_CSV_URL =
   "https://www150.statcan.gc.ca/n1/tbl/csv/35100026-eng.zip";
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
-}
-
-async function fetchWithRetry(
-  url: string,
-  maxRetries = 3,
-): Promise<Response> {
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    try {
-      const res = await fetch(url, {
-        headers: HEADERS,
-        signal: AbortSignal.timeout(120_000),
-      });
-      if (res.status === 429 || res.status >= 500) {
-        throw new Error(`HTTP ${res.status}`);
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
-      return res;
-    } catch (err) {
-      if (attempt === maxRetries) throw err;
-      const delay = Math.min(2000 * 2 ** attempt, 30_000);
-      console.log(`  Retry ${attempt + 1}/${maxRetries} in ${delay}ms…`);
-      await sleep(delay);
-    }
-  }
-  throw new Error("unreachable");
-}
-
-async function downloadAndExtractZip(
-  url: string,
-  label: string,
-): Promise<string[]> {
-  const tmpDir = path.join(os.tmpdir(), `hp_${label}_${Date.now()}`);
-  const tmpZip = tmpDir + ".zip";
-
-  console.log(`  Downloading ${url.split("/").pop()}…`);
-  const res = await fetchWithRetry(url);
-  const buf = Buffer.from(await res.arrayBuffer());
-  fs.writeFileSync(tmpZip, buf);
-  console.log(`  Downloaded ${(buf.byteLength / 1024 / 1024).toFixed(1)} MB`);
-
-  fs.mkdirSync(tmpDir, { recursive: true });
-  execSync(`unzip -o "${tmpZip}" -d "${tmpDir}"`, { stdio: "pipe" });
-  fs.unlinkSync(tmpZip);
-
-  return fs.readdirSync(tmpDir).map((f) => path.join(tmpDir, f));
-}
-
-function parseCsvLine(line: string): string[] {
-  const result: string[] = [];
-  let current = "";
-  let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      inQuotes = !inQuotes;
-    } else if (ch === "," && !inQuotes) {
-      result.push(current);
-      current = "";
-    } else {
-      current += ch;
-    }
-  }
-  result.push(current);
-  return result;
-}
 
 // ---------------------------------------------------------------------------
 // CMA geocoding via Photon
@@ -113,10 +39,9 @@ async function geocodeCma(name: string): Promise<GeoResult | null> {
   const url = `https://photon.komoot.io/api/?q=${query}&limit=1&lang=en`;
 
   try {
-    const res = await fetchWithRetry(url, 2);
-    const data = (await res.json()) as {
+    const data = await fetchJson<{
       features: { geometry: { coordinates: [number, number] } }[];
-    };
+    }>(url, 2);
     const coords = data.features?.[0]?.geometry?.coordinates;
     if (coords) {
       return { lat: coords[1], lng: coords[0] };
@@ -326,23 +251,13 @@ async function main() {
   const crimeData = await fetchCrimeData();
   const censusData = buildPopulationAndRealEstate();
 
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-
   const files: [string, object][] = [
     ["crime.json", crimeData],
     ["realestate.json", censusData.realestate],
     ["population.json", censusData.population],
   ];
 
-  console.log("\nWriting output files…");
-  for (const [name, data] of files) {
-    const filePath = path.join(OUT_DIR, name);
-    const json = JSON.stringify(data);
-    fs.writeFileSync(filePath, json);
-    const entries = Object.keys(data).length;
-    const sizeKb = (Buffer.byteLength(json) / 1024).toFixed(1);
-    console.log(`  ${name}: ${entries} entries (${sizeKb} KB)`);
-  }
+  writeOutputFiles(OUT_DIR, files);
 
   console.log("\nDone!");
 }
